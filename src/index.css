@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Styles globaux dans la couche base */
+@layer base {
+  :root {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #223048; /* base background inspired by image */
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    /* ⚠️ Évite d’imposer display:flex ici sauf si tu veux centrer TOUT ton site en permanence */
+  }
+
+  h1 { font-size: 3.2em; line-height: 1.1; }
+}
+
+/* Liens et boutons → couche components */
+@layer components {
+  a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+  }
+  a:hover { color: #535bf2; }
+
+  button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+  button:hover { border-color: #646cff; }
+  button:focus,
+  button:focus-visible { outline: 4px auto -webkit-focus-ring-color; }
+}
+
+/* Media queries : garde-les après */
+@media (prefers-color-scheme: light) {
+  :root { color: #213547; background-color: #ffffff; }
+  a:hover { color: #747bff; }
+  button { background-color: #f9f9f9; }
+}
+@layer base {
+  :root { --brand: #0D1B2A; } /* ← mets la couleur du fond de ton logo */
+}
+
+/* Theme variables based on the provided image */
+:root {
+  --bg: #223048;
+  --panel: #35465f;
+  --panel-2: #3e5574;
+  --accent: #93a0ff;
+  --muted: #9fb0c9;
+  --text: rgba(255,255,255,0.95);
+}
+
+@layer components {
+  .card-panel {
+    background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%);
+    border-radius: 1rem; /* rounded panels like image */
+    padding: 1.25rem;
+    box-shadow: 0 6px 18px rgba(11,33,65,0.35);
+    color: var(--text);
+  }
+
+  .feature-icon {
+    background: rgba(255,255,255,0.06);
+    width: 3.5rem;
+    height: 3.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem;
+    margin-right: 1rem;
+  }
+
+  .feature-icon:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(147,160,255,0.12);
+    transition: transform 180ms ease, box-shadow 180ms ease;
+  }
+
+  .hero-title {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .muted { color: var(--muted); }
+}
