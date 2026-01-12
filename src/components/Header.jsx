@@ -33,24 +33,19 @@ export default function Header() {
         background: "var(--bg)"
       }}
     >
-      <div className="mx-auto max-w-6xl h-28 px-4 flex items-center">
-        {/* Left placeholder (keeps same width as right) */}
-        <div className="w-1/3 flex items-center">
-          {/* empty for now - could hold nav or buttons */}
-        </div>
-
-        {/* Center: exact centered logo */}
-        <div className="w-1/3 flex items-center justify-center">
+      <div className="mx-auto max-w-6xl h-28 px-4 flex items-center justify-between">
+        {/* Logo */}
+        <div className="flex items-center">
           <Link to="/" className="flex items-center">
             <img
               src="/logo-delven.png"
               alt="Delven"
-              className="h-40 w-auto object-contain"
+              className="h-20 w-auto object-contain"
               onError={(e) => {
                 e.currentTarget.replaceWith(
                   Object.assign(document.createElement("span"), {
                     textContent: "Delven",
-                    className: "font-semibold text-lg",
+                    className: "font-semibold text-2xl",
                   })
                 );
               }}
@@ -58,10 +53,21 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Right placeholder (same width) */}
-        <div className="w-1/3 flex items-center justify-end">
-          {/* empty - reserved for future actions */}
-        </div>
+        {/* Navigation */}
+        <nav className="flex items-center gap-8">
+          <Link to="/" className="hover:text-accent transition-colors">
+            Accueil
+          </Link>
+          <Link to="/quiz" className="hover:text-accent transition-colors">
+            Quiz
+          </Link>
+          <Link to="/a-propos" className="hover:text-accent transition-colors">
+            À propos
+          </Link>
+          <Link to="/contact" className="hover:text-accent transition-colors">
+            Contact
+          </Link>
+        </nav>
       </div>
     </header>
   );

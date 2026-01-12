@@ -2,12 +2,11 @@ import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 
-export default function Layout({ children }) {
+export default function Layout({ children, showHeader = true }) {
   return (
     <div style={{ backgroundColor: 'var(--bg)', color: 'var(--text)' }} className="min-h-screen">
-      <Header />
-      {/* pt-28 = espace sous le header (h-28) */}
-      <main className="mx-auto max-w-6xl px-4 pt-28 pb-16">{children}</main>
+      {showHeader && <Header />}
+      <main className={`${showHeader ? 'pt-28' : 'pt-0'}`}>{children}</main>
       <Footer />
     </div>
   );
