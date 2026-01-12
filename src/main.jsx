@@ -10,6 +10,8 @@ import APropos from "./pages/APropos";
 import Contact from "./pages/Contact";
 import MentionsLegales from "./pages/MentionsLegales";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
+import IntelligenceArtificielle from "./pages/IntelligenceArtificielle";
+import ServicesInformatiques from "./pages/ServicesInformatiques";
 import "./index.css"; // <-- Tailwind & styles
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -18,6 +20,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/quiz" element={<Quiz />} />
+        <Route path="/intelligence-artificielle" element={<IntelligenceArtificielle />} />
+        <Route path="/services-informatiques" element={<ServicesInformatiques />} />
         <Route path="/offres/audit-ia" element={<AuditIA />} />
         <Route path="/offres/formations-ia" element={<FormationsIA />} />
         <Route path="/offres/developpement-ia" element={<DeveloppementIA />} />

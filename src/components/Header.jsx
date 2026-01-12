@@ -26,19 +26,16 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 text-white transition-transform duration-300 will-change-transform ${
+      className={`fixed top-0 inset-x-0 z-50 text-white transition-transform duration-300 will-change-transform bg-[#151769] ${
         hidden ? "-translate-y-full" : ""
       } ${elevated ? "shadow-md" : ""}`}
-      style={{
-        background: "var(--bg)"
-      }}
     >
       <div className="mx-auto max-w-6xl h-28 px-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
             <img
-              src="/logo-delven.png"
+              src="/logo-delven-outline.png"
               alt="Delven"
               className="h-20 w-auto object-contain"
               onError={(e) => {
