@@ -1,120 +1,99 @@
 import React from "react";
 import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import { ChevronLeftIcon, ChevronRightIcon, CheckCircleIcon } from "@heroicons/react/24/outline";
 
 export default function APropos() {
   const [cardsIndex, setCardsIndex] = React.useState(0);
-  const [showAvis, setShowAvis] = React.useState(false);
-  const [isClosing, setIsClosing] = React.useState(false);
-
-  const handleToggleAvis = () => {
-    if (showAvis) {
-      setIsClosing(true);
-      setTimeout(() => {
-        setShowAvis(false);
-        setIsClosing(false);
-      }, 1200);
-    } else {
-      setShowAvis(true);
-    }
-  };
 
   const cards = [
     {
-      icon: "🎯",
+      icon: "ðŸŽ¯",
       title: "Notre mission",
       content: (
         <>
-          <p className="text-[15px] leading-relaxed mb-3 opacity-90">
-            Rendre l'intelligence artificielle accessible, utile et rentable
-            pour toutes les organisations, sans jargon ni complexité inutile.
+          <p className="text-[15px] leading-relaxed mb-3 text-gray-600">
+            Transformer les processus manuels des PME en logiciels sur mesure â€” ergonomiques,
+            simples, efficaces â€” qui amÃ©liorent concrÃ¨tement le quotidien des Ã©quipes.
           </p>
-          <p className="text-[15px] leading-relaxed opacity-90">
-            Nous créons des outils qui simplifient, automatisent
-            et éclairent la prise de décision, dès les premières semaines d'usage.
+          <p className="text-[15px] leading-relaxed text-gray-600">
+            Nous ne vendons pas des logiciels. Nous construisons des outils que vos Ã©quipes
+            adoptent immÃ©diatement parce qu'ils ont Ã©tÃ© pensÃ©s pour elles.
           </p>
         </>
-      )
+      ),
     },
     {
-      icon: "🌍",
-      title: "Un engagement pour les pays émergents",
+      icon: "ðŸŒ",
+      title: "Un engagement international",
       content: (
         <>
-          <p className="text-[15px] leading-relaxed mb-3 opacity-90">
-            Nous concentrons une partie de notre énergie sur les pays émergents,
-            notamment en Afrique, là où chaque solution numérique
-            peut avoir un effet de levier spectaculaire.
+          <p className="text-[15px] leading-relaxed mb-3 text-gray-600">
+            Nous travaillons avec des entreprises en France et dans les pays Ã©mergents,
+            notamment en Afrique, lÃ  oÃ¹ chaque solution numÃ©rique peut avoir un effet de levier
+            spectaculaire.
           </p>
-          <p className="text-[15px] leading-relaxed opacity-90">
-            Notre ambition : devenir un partenaire clé du développement
-            technologique des entreprises dans ces marchés.
+          <p className="text-[15px] leading-relaxed text-gray-600">
+            Notre ambition : devenir le partenaire technologique de rÃ©fÃ©rence pour les PME
+            en croissance, quelle que soit leur gÃ©ographie.
           </p>
         </>
-      )
+      ),
     },
     {
-      icon: "♻️",
-      title: "Technologie & développement durable",
+      icon: "ðŸ”",
+      title: "L'audit avant tout",
+      Content: null,
       content: (
         <>
-          <p className="text-[15px] leading-relaxed mb-3 opacity-90">
-            L'innovation ne doit pas s'opposer à la responsabilité.
-            Nous intégrons le développement durable au cœur de notre approche.
+          <p className="text-[15px] leading-relaxed mb-3 text-gray-600">
+            Avant de coder une seule ligne, nous analysons vos processus avec vous. Cette Ã©tape
+            d'audit â€” gratuite et sans engagement â€” est ce qui nous permet de proposer des
+            solutions qui changent vraiment les choses.
           </p>
-          <p className="text-[15px] leading-relaxed opacity-90">
-            Automatiser et optimiser, c'est réduire le gaspillage
-            de temps, de ressources et d'énergie.
+          <p className="text-[15px] leading-relaxed text-gray-600">
+            RÃ©sultat : des logiciels qui s'adaptent Ã  votre mÃ©tier, pas l'inverse.
           </p>
         </>
-      )
+      ),
     },
     {
-      icon: "🚀",
-      title: "Notre vision d'avenir",
+      icon: "ðŸš€",
+      title: "Notre vision",
       content: (
-        <>
-          <p className="text-[15px] leading-relaxed mb-3 opacity-90">
-            Nous construisons un écosystème complet autour de l'IA :
-          </p>
-          <ul className="list-disc pl-5 text-[15px] leading-relaxed opacity-90 space-y-1">
-            <li>Formation stratégique à l'IA.</li>
-            <li>Logiciels internes comme Delven Score.</li>
-            <li>Automatisation des processus métiers.</li>
-            <li>Agents IA spécialisés pour chaque métier.</li>
-            <li>Suite d'outils pensée pour les marchés en croissance.</li>
-          </ul>
-        </>
-      )
+        <ul className="space-y-2 text-[15px] text-gray-600">
+          {["Logiciels mÃ©tier sur mesure", "Automatisation des processus rÃ©pÃ©titifs", "Tableaux de bord en temps rÃ©el", "Accompagnement long terme"].map((item) => (
+            <li key={item} className="flex items-start gap-2">
+              <CheckCircleIcon className="h-4 w-4 text-[#151769] flex-shrink-0 mt-0.5" />
+              {item}
+            </li>
+          ))}
+        </ul>
+      ),
     },
     {
-      icon: "🤝",
+      icon: "ðŸ¤",
       title: "Notre promesse",
       content: (
-        <>
-          <p className="text-[15px] leading-relaxed mb-3 opacity-90">Delven, c'est l'alliance de trois piliers :</p>
-          <ul className="list-disc pl-5 text-[15px] leading-relaxed opacity-90 space-y-1">
-            <li><strong>Simplicité</strong> : des solutions utilisables immédiatement.</li>
-            <li><strong>Impact</strong> : des gains mesurables (temps, coûts, qualité).</li>
-            <li><strong>Accessibilité</strong> : faire de l'IA un levier pour tous.</li>
-          </ul>
-        </>
-      )
-    }
+        <ul className="space-y-2 text-[15px] text-gray-600">
+          {[
+            ["SimplicitÃ©", "des logiciels utilisables immÃ©diatement, sans formation lourde."],
+            ["Impact", "des gains mesurables en temps, en coÃ»ts et en qualitÃ©."],
+            ["ProximitÃ©", "un interlocuteur unique qui suit votre projet de l'audit Ã  la mise en production."],
+          ].map(([k, v]) => (
+            <li key={k}><strong className="text-gray-800">{k}</strong> â€” {v}</li>
+          ))}
+        </ul>
+      ),
+    },
   ];
 
-  const cardsNext = () => {
-    setCardsIndex((prev) => (prev + 1) % cards.length);
-  };
+  const cardsNext = () => setCardsIndex((prev) => (prev + 1) % cards.length);
+  const cardsPrev = () => setCardsIndex((prev) => (prev - 1 + cards.length) % cards.length);
 
-  const cardsPrev = () => {
-    setCardsIndex((prev) => (prev - 1 + cards.length) % cards.length);
-  };
   React.useEffect(() => {
     const revealEls = document.querySelectorAll(".reveal-on-scroll");
     if (!revealEls.length) return;
-
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -126,184 +105,180 @@ export default function APropos() {
       },
       { threshold: 0.15 }
     );
-
     revealEls.forEach((el) => observer.observe(el));
-
     return () => observer.disconnect();
   }, []);
 
   return (
     <Layout>
-      <section id="about" className="about">
-        <div className="max-w-7xl mx-auto px-8 md:px-16">
-          
-          {/* HERO */}
-          <div className="grid md:grid-cols-[1.6fr_1.2fr] gap-12 items-center mb-12 reveal-on-scroll">
-            <div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                <span className="text-text">À propos</span><br/>
-                <span className="text-text">de</span><br/>
-                <span className="bg-[#151769] text-white px-2 py-0.5 inline-block rounded-lg">Delven</span>
-              </h1>
-              <p className="text-lg leading-relaxed mb-4 opacity-90">
-                Delven est une entreprise technologique qui met l'intelligence artificielle
-                au service de la performance des organisations, en France et dans les pays émergents.
-              </p>
-            </div>
-
-            {/* VISUEL */}
-            <div className="about-hero-visual">
-              <div className="about-dashboard">
-                <div className="about-dashboard-window floating">
-
-                  <div className="about-dashboard-header">
-                    <div className="about-dashboard-dots">
-                      <span className="dot dot-red"></span>
-                      <span className="dot dot-yellow"></span>
-                      <span className="dot dot-green"></span>
-                    </div>
-                    <span className="about-dashboard-title">Delven • IA Dashboard</span>
-                  </div>
-
-                  <div className="about-dashboard-body">
-                    {/* Sidebar */}
-                    <aside className="about-dashboard-sidebar">
-                      <div className="sidebar-item is-active">Vue globale</div>
-                      <div className="sidebar-item">Automatiser</div>
-                      <div className="sidebar-item">Standardiser</div>
-                      <div className="sidebar-item">Former</div>
-                      <div className="sidebar-item">Optimiser</div>
-                      <div className="sidebar-item">Pays émergents</div>
-                    </aside>
-
-                    {/* Contenu principal */}
-                    <main className="about-dashboard-main">
-                      {/* Graphique principal */}
-                      <section className="about-dashboard-chart shimmer">
-                        <div className="chart-header">
-                          <span>Gains potentiels par levier</span>
-                          <span className="chart-tag">Simulation IA</span>
-                        </div>
-                        <div className="chart-bars">
-                          <div className="chart-bar bar-1"></div>
-                          <div className="chart-bar bar-2"></div>
-                          <div className="chart-bar bar-3"></div>
-                          <div className="chart-bar bar-4"></div>
-                        </div>
-                        <div className="chart-legend">
-                          <span>Automatiser</span>
-                          <span>Standardiser</span>
-                          <span>Former</span>
-                          <span>Optimiser</span>
-                        </div>
-                      </section>
-
-                      {/* Cartes de stats */}
-                      <section className="about-dashboard-grid">
-                        <article className="stat-card">
-                          <p className="stat-label">Temps gagné / mois</p>
-                          <p className="stat-value">+120 h</p>
-                          <p className="stat-sub">Après déploiement des automatisations IA.</p>
-                        </article>
-                        <article className="stat-card">
-                          <p className="stat-label">Erreurs réduites</p>
-                          <p className="stat-value">-68%</p>
-                          <p className="stat-sub">Sur les tâches répétitives et manuelles.</p>
-                        </article>
-                        <article className="stat-card">
-                          <p className="stat-label">Pays émergents</p>
-                          <p className="stat-value">Focus Afrique</p>
-                          <p className="stat-sub">Des solutions adaptées aux réalités du terrain.</p>
-                        </article>
-                      </section>
-                    </main>
-                  </div>
-                </div>
-              </div>
-
-              <p className="about-hero-caption">
-                Un aperçu du type de tableaux de bord et d'outils IA que Delven
-                conçoit pour révéler vos gains potentiels et guider vos décisions.
-              </p>
-            </div>
+      {/* â”€â”€ HERO â”€â”€ */}
+      <section className="bg-[#151769] py-20 px-8 md:px-16">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+          <div className="text-white">
+            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-6 bg-white/10 border border-white/20 text-white/80">
+              Qui sommes-nous
+            </span>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-white">
+              Nous transformons vos processus en{" "}
+              <span className="text-[#fde68a]">logiciels sur mesure</span>
+            </h1>
+            <p className="text-lg text-white/75 leading-relaxed mb-8 max-w-xl">
+              Delven est une Ã©quipe de dÃ©veloppeurs et consultants spÃ©cialisÃ©s dans la crÃ©ation
+              de logiciels internes pour les PME en croissance â€” une alternative concrÃ¨te aux ERP
+              rigides et aux tableurs Excel.
+            </p>
+            <Link
+              to="/audit"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#fef3c7] text-[#151769] rounded-xl font-bold text-base hover:bg-[#fde68a] transition-colors shadow-lg"
+            >
+              Demander l'audit gratuit â†’
+            </Link>
           </div>
 
-          {/* FONDATEUR + SCHÉMA */}
-          <div className="grid md:grid-cols-[1.1fr_1.6fr] gap-10 items-start mb-14 reveal-on-scroll">
-            <aside className="bg-white rounded-3xl p-7 shadow-2xl border border-gray-200/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-3xl">
-              <div className="flex items-center gap-4 mb-4">
-                <img 
-                  src="/Photo.jpg" 
-                  alt="Hugo Bayart" 
-                  className="w-20 h-20 rounded-full object-cover shadow-lg"
+          {/* Dashboard animÃ© */}
+          <div className="about-hero-visual">
+            <div className="about-dashboard">
+              <div className="about-dashboard-window floating">
+                <div className="about-dashboard-header">
+                  <div className="about-dashboard-dots">
+                    <span className="dot dot-red"></span>
+                    <span className="dot dot-yellow"></span>
+                    <span className="dot dot-green"></span>
+                  </div>
+                  <span className="about-dashboard-title">Delven â€¢ Logiciel mÃ©tier</span>
+                </div>
+                <div className="about-dashboard-body">
+                  <aside className="about-dashboard-sidebar">
+                    <div className="sidebar-item is-active">Vue globale</div>
+                    <div className="sidebar-item">Automatiser</div>
+                    <div className="sidebar-item">Standardiser</div>
+                    <div className="sidebar-item">Former</div>
+                    <div className="sidebar-item">Optimiser</div>
+                    <div className="sidebar-item">Reporting</div>
+                  </aside>
+                  <main className="about-dashboard-main">
+                    <section className="about-dashboard-chart shimmer">
+                      <div className="chart-header">
+                        <span>Gains potentiels par levier</span>
+                        <span className="chart-tag">Simulation</span>
+                      </div>
+                      <div className="chart-bars">
+                        <div className="chart-bar bar-1"></div>
+                        <div className="chart-bar bar-2"></div>
+                        <div className="chart-bar bar-3"></div>
+                        <div className="chart-bar bar-4"></div>
+                      </div>
+                      <div className="chart-legend">
+                        <span>Automatiser</span>
+                        <span>Standardiser</span>
+                        <span>Former</span>
+                        <span>Optimiser</span>
+                      </div>
+                    </section>
+                    <section className="about-dashboard-grid">
+                      <article className="stat-card">
+                        <p className="stat-label">Temps gagnÃ© / mois</p>
+                        <p className="stat-value">+120 h</p>
+                        <p className="stat-sub">AprÃ¨s automatisation des processus.</p>
+                      </article>
+                      <article className="stat-card">
+                        <p className="stat-label">Erreurs rÃ©duites</p>
+                        <p className="stat-value">-68%</p>
+                        <p className="stat-sub">Sur les tÃ¢ches rÃ©pÃ©titives.</p>
+                      </article>
+                      <article className="stat-card">
+                        <p className="stat-label">Adoption Ã©quipe</p>
+                        <p className="stat-value">100%</p>
+                        <p className="stat-sub">Outil pensÃ© pour les utilisateurs.</p>
+                      </article>
+                    </section>
+                  </main>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-8 md:px-16 bg-white">
+        <div className="max-w-7xl mx-auto">
+
+          {/* â”€â”€ FONDATEUR + CHIFFRES â”€â”€ */}
+          <div className="grid md:grid-cols-2 gap-10 items-start mb-20 reveal-on-scroll">
+            <div className="bg-gray-50 border border-gray-200 rounded-3xl p-8">
+              <div className="flex items-center gap-5 mb-6">
+                <img
+                  src="/Photo.jpg"
+                  alt="Hugo Bayart"
+                  className="w-20 h-20 rounded-full object-cover shadow-lg ring-4 ring-white"
                 />
                 <div>
-                  <p className="text-xs uppercase tracking-wider opacity-70 mb-1">Fondateur</p>
-                  <h2 className="text-xl font-bold mb-1">Hugo Bayart</h2>
-                  <p className="text-sm opacity-80">Entrepreneur & concepteur de solutions IA</p>
+                  <p className="text-xs uppercase tracking-wider text-gray-400 mb-1">Fondateur</p>
+                  <h2 className="text-xl font-bold text-gray-900">Hugo Bayart</h2>
+                  <p className="text-sm text-gray-500">Entrepreneur & dÃ©veloppeur de logiciels mÃ©tier</p>
                 </div>
               </div>
-              <p className="text-[15px] leading-relaxed italic">
-                « La technologie doit être un levier d'émancipation, pas une barrière.
-                Avec Delven, mon objectif est de rendre l'IA accessible
-                et utile à ceux qui en ont le plus besoin. »
-              </p>
-            </aside>
+              <blockquote className="text-gray-700 text-[15px] leading-relaxed italic border-l-4 border-[#151769] pl-4">
+                Â« La technologie doit simplifier la vie des Ã©quipes, pas la compliquer.
+                Chaque logiciel que nous crÃ©ons doit Ãªtre plus simple, plus rapide et plus agrÃ©able
+                que ce qu'il remplace. Â»
+              </blockquote>
+            </div>
 
-            {/* Stats */}
             <div>
-              <h3 className="text-2xl font-bold mb-4">Nos chiffres clés</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-white/95 rounded-2xl p-6 shadow-xl text-center">
-                  <span className="block text-4xl font-bold text-[#151769] mb-2">5+</span>
-                  <p className="text-sm opacity-80">Projets IA accompagnés</p>
-                </div>
-                <div className="bg-white/95 rounded-2xl p-6 shadow-xl text-center">
-                  <span className="block text-4xl font-bold text-[#151769] mb-2">200+</span>
-                  <p className="text-sm opacity-80">Heures gagnées par mois</p>
-                </div>
-                <div className="bg-white/95 rounded-2xl p-6 shadow-xl text-center">
-                  <span className="block text-4xl font-bold text-[#151769] mb-2">3</span>
-                  <p className="text-sm opacity-80">Pays ciblés en priorité</p>
-                </div>
-                <div className="bg-white/95 rounded-2xl p-6 shadow-xl text-center">
-                  <span className="block text-4xl font-bold text-[#151769] mb-2">100%</span>
-                  <p className="text-sm opacity-80">Satisfaction client</p>
-                </div>
+              <p className="text-[#151769] font-semibold uppercase tracking-widest text-sm mb-3">En chiffres</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Ce que nous avons accompli</h2>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { val: "5+", label: "Projets accompagnÃ©s" },
+                  { val: "200+", label: "Heures gagnÃ©es / mois" },
+                  { val: "3", label: "Pays actifs" },
+                  { val: "100%", label: "Satisfaction client" },
+                ].map(({ val, label }) => (
+                  <div key={label} className="bg-[#151769] rounded-2xl p-6 text-center text-white">
+                    <span className="block text-4xl font-black text-[#fde68a] mb-1">{val}</span>
+                    <p className="text-sm text-white/75">{label}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* CAROUSEL CARTES */}
-          <div className="mb-14 reveal-on-scroll">
-            <div className="flex items-center justify-end gap-6 relative">
+          {/* â”€â”€ CAROUSEL â”€â”€ */}
+          <div className="mb-20 reveal-on-scroll">
+            <div className="text-center mb-10">
+              <p className="text-[#151769] font-semibold uppercase tracking-widest text-sm mb-3">Notre ADN</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Ce qui nous dÃ©finit</h2>
+            </div>
+
+            <div className="flex items-center justify-center gap-6">
               <button
                 onClick={cardsPrev}
-                className="p-2 bg-white text-[#151769] shadow-lg hover:shadow-xl transition-all hover:-translate-x-1 z-20 rounded-lg border border-gray-200"
-                aria-label="Précédent"
+                className="p-2.5 bg-white border border-gray-200 text-[#151769] shadow-md hover:shadow-lg rounded-xl transition-all hover:-translate-x-0.5 flex-shrink-0"
+                aria-label="PrÃ©cÃ©dent"
               >
-                <ChevronLeftIcon className="h-8 w-8" />
+                <ChevronLeftIcon className="h-6 w-6" />
               </button>
 
-              <div className="relative w-full max-w-2xl h-96 flex items-center justify-center" style={{ perspective: '1200px' }}>
+              <div className="relative flex-1 max-w-2xl h-80" style={{ perspective: "1000px" }}>
                 {cards.map((card, index) => {
                   const offset = index - cardsIndex;
-                  const isActive = index === cardsIndex;
                   const isFar = Math.abs(offset) > 2;
                   return (
                     <div
                       key={index}
-                      className="absolute w-full max-w-[85%] bg-white rounded-2xl p-7 shadow-xl border border-gray-200/60 transition-all duration-500"
+                      className="absolute inset-x-0 mx-auto w-full max-w-[90%] bg-white rounded-2xl p-8 shadow-xl border border-gray-100 transition-all duration-500"
                       style={{
-                        transform: `translateX(${offset * 80}px) translateZ(${-20 * Math.abs(offset)}px) scale(${1 - 0.12 * Math.abs(offset)})`,
-                        opacity: isFar ? 0.1 : 1 - 0.25 * Math.abs(offset),
+                        transform: `translateX(${offset * 70}px) translateZ(${-18 * Math.abs(offset)}px) scale(${1 - 0.1 * Math.abs(offset)})`,
+                        opacity: isFar ? 0 : 1 - 0.28 * Math.abs(offset),
                         zIndex: 10 - Math.abs(offset),
-                        filter: isFar ? 'blur(2px)' : 'none',
-                        pointerEvents: isActive ? 'auto' : 'none'
+                        pointerEvents: index === cardsIndex ? "auto" : "none",
                       }}
                     >
-                      <div className="w-10 h-10 rounded-full bg-[#151769]/10 flex items-center justify-center mb-3 text-xl">{card.icon}</div>
-                      <h3 className="text-xl font-bold mb-3">{card.title}</h3>
+                      <div className="w-11 h-11 bg-[#151769]/10 rounded-xl flex items-center justify-center mb-4 text-xl">
+                        {card.icon}
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-3">{card.title}</h3>
                       {card.content}
                     </div>
                   );
@@ -312,28 +287,49 @@ export default function APropos() {
 
               <button
                 onClick={cardsNext}
-                className="p-2 bg-white text-[#151769] shadow-lg hover:shadow-xl transition-all hover:translate-x-1 z-20 rounded-lg border border-gray-200"
+                className="p-2.5 bg-white border border-gray-200 text-[#151769] shadow-md hover:shadow-lg rounded-xl transition-all hover:translate-x-0.5 flex-shrink-0"
                 aria-label="Suivant"
               >
-                <ChevronRightIcon className="h-8 w-8" />
+                <ChevronRightIcon className="h-6 w-6" />
               </button>
+            </div>
+
+            <div className="flex justify-center gap-2 mt-6">
+              {cards.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCardsIndex(i)}
+                  className={`h-2 rounded-full transition-all ${i === cardsIndex ? "bg-[#151769] w-6" : "bg-gray-300 w-2"}`}
+                />
+              ))}
             </div>
           </div>
 
-          {/* CTA FINAL */}
-          <div className="text-center max-w-2xl mx-auto reveal-on-scroll mb-14 bg-white rounded-3xl p-10 shadow-xl">
-            <h2 className="text-3xl font-bold mb-2">Travaillons ensemble</h2>
-            <p className="text-lg leading-relaxed mb-5 opacity-90">
-              Que vous soyez une entreprise en France, en Afrique ou ailleurs,
-              nous serons ravis d'échanger sur vos besoins et de construire
-              des solutions concrètes basées sur l'IA.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-block px-10 py-4 bg-[#151769] text-white rounded-xl font-semibold text-lg hover:bg-[#0f1150] transition-colors shadow-lg"
-            >
-              Discuter de votre projet
-            </Link>
+          {/* â”€â”€ CTA FINAL â”€â”€ */}
+          <div className="reveal-on-scroll">
+            <div className="bg-[#151769] rounded-3xl p-12 text-center text-white relative overflow-hidden">
+              <div
+                className="absolute inset-0 opacity-20"
+                style={{
+                  backgroundImage: `radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 80%, rgba(255,255,255,0.08) 0%, transparent 50%)`,
+                }}
+              />
+              <div className="relative z-10">
+                <p className="text-[#fde68a] font-semibold uppercase tracking-widest text-sm mb-4">Passons Ã  l'action</p>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Parlons de votre projet</h2>
+                <p className="text-white/75 text-lg max-w-xl mx-auto mb-8 leading-relaxed">
+                  Audit gratuit de vos processus Â· Proposition sur mesure Â· Sans engagement.
+                  La premiÃ¨re conversation ne vous coÃ»te rien â€” elle peut changer beaucoup.
+                </p>
+                <Link
+                  to="/audit"
+                  className="inline-flex items-center gap-2 px-10 py-4 bg-[#fef3c7] text-[#151769] rounded-xl font-bold text-lg hover:bg-[#fde68a] transition-colors shadow-lg"
+                >
+                  Demander mon audit gratuit â†’
+                </Link>
+              </div>
+            </div>
           </div>
 
         </div>

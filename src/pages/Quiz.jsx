@@ -300,7 +300,7 @@ export default function Quiz() {
                 Vous souhaitez un diagnostic complet et un plan d'action IA pour votre entreprise ?
               </h3>
               <Link
-                to="/contact"
+                to="/audit"
                 className="inline-block px-8 py-4 bg-accent text-white rounded-xl font-semibold hover:bg-accent/90 transition-colors"
               >
                 Réserver un appel de découverte

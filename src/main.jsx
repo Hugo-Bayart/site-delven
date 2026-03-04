@@ -12,6 +12,8 @@ import MentionsLegales from "./pages/MentionsLegales";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 import IntelligenceArtificielle from "./pages/IntelligenceArtificielle";
 import ServicesInformatiques from "./pages/ServicesInformatiques";
+import QuestionsFrequentes from "./pages/QuestionsFrequentes";
+import Audit from "./pages/Audit";
 import "./index.css"; // <-- Tailwind & styles
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -29,6 +31,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/contact" element={<Contact />} />
         <Route path="/mentions-legales" element={<MentionsLegales />} />
         <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
+        <Route path="/questions-frequentes" element={<QuestionsFrequentes />} />
+        <Route path="/audit" element={<Audit />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

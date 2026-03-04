@@ -51,19 +51,21 @@ export default function Header() {
         </div>
 
         {/* Navigation */}
-        <nav className="flex items-center gap-8">
+        <nav className="flex items-center gap-8" aria-label="Navigation principale">
           <Link to="/" className="hover:text-accent transition-colors">
             Accueil
-          </Link>
-          <Link to="/quiz" className="hover:text-accent transition-colors">
-            Quiz
           </Link>
           <Link to="/a-propos" className="hover:text-accent transition-colors">
             À propos
           </Link>
-          <Link to="/contact" className="hover:text-accent transition-colors">
-            Contact
-          </Link>
+          {pathname !== "/audit" && (
+            <Link
+              to="/audit"
+              className="px-6 py-2.5 bg-[#fef3c7] text-[#151769] rounded-full font-semibold hover:bg-[#fde68a] transition-colors"
+            >
+              Audit gratuit
+            </Link>
+          )}
         </nav>
       </div>
     </header>
