@@ -58,7 +58,7 @@ export default function Header() {
           <Link to="/a-propos" className="hover:text-accent transition-colors">
             À propos
           </Link>
-          {pathname !== "/audit" && (
+          {pathname !== "/audit" && pathname !== "/a-propos" && (
             <Link
               to="/audit"
               className="px-6 py-2.5 bg-[#fef3c7] text-[#151769] rounded-full font-semibold hover:bg-[#fde68a] transition-colors"

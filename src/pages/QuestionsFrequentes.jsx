@@ -9,7 +9,7 @@ const faqSections = [
     questions: [
       {
         q: "Qu'est-ce qu'un logiciel interne sur mesure ?",
-        a: "Un logiciel interne sur mesure est un outil développé spécifiquement pour les processus d'une entreprise, en opposition aux ERP généralistes. Il automatise vos tâches répétitives, centralise vos données et s'adapte exactement à vos besoins métier. Contrairement à un ERP, vous ne payez que ce dont vous avez besoin, et l'outil est conçu autour de vos équipes — pas l'inverse.",
+        a: "Un logiciel interne sur mesure est un outil développé spécifiquement pour les processus d'une entreprise, en opposition aux ERP généralistes. Il automatise vos tâches répétitives, centralise vos données et s'adapte exactement à vos besoins métier. Contrairement à un ERP, vous ne payez que ce dont vous avez besoin, et l'outil est conçu autour de vos équipes. Pas l'inverse.",
       },
       {
         q: "Pourquoi choisir un logiciel sur mesure plutôt qu'un ERP ?",
@@ -76,7 +76,7 @@ const faqSections = [
       },
       {
         q: "Travaillez-vous avec des entreprises hors de France ?",
-        a: "Oui. Nous accompagnons des entreprises en France et à l'international — notamment en Afrique francophone (Congo, Côte d'Ivoire, Sénégal, etc.) et dans les DOM-TOM. Nos audits et suivis de projet se font en distanciel sans difficulté.",
+        a: "Oui. Nous accompagnons des entreprises en France et à l'international, notamment en Afrique francophone (Congo, Côte d'Ivoire, Sénégal, etc.) et dans les DOM-TOM. Nos audits et suivis de projet se font en distanciel sans difficulté.",
       },
       {
         q: "J'ai déjà un outil en place (ERP, Excel...) — est-ce compatible ?",
@@ -112,7 +112,7 @@ export default function QuestionsFrequentes() {
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-6 bg-white/10 border border-white/20 text-white/80">
             FAQ
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold mb-5">
+          <h1 className="text-4xl md:text-5xl font-bold mb-5 text-white">
             Questions fréquentes
           </h1>
           <p className="text-lg text-white/80 max-w-2xl mx-auto">
@@ -134,15 +134,15 @@ export default function QuestionsFrequentes() {
                   const key = `${secIdx}-${qIdx}`;
                   const isOpen = !!openItems[key];
                   return (
-                    <div key={qIdx} className="border border-gray-200 rounded-2xl overflow-hidden">
+                    <div key={qIdx} className="border border-gray-200 rounded-2xl overflow-hidden bg-[#151769]">
                       <button
                         onClick={() => toggle(secIdx, qIdx)}
-                        className="w-full text-left px-7 py-5 flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors"
+                        className="w-full text-left px-7 py-5 flex items-center justify-between gap-4 hover:bg-white/5 transition-colors"
                         aria-expanded={isOpen}
                       >
-                        <span className="font-semibold text-gray-900">{item.q}</span>
+                        <span className="font-semibold text-white">{item.q}</span>
                         <span
-                          className={`text-[#151769] text-xl flex-shrink-0 transition-transform duration-200 ${
+                          className={`text-[#fde68a] text-xl flex-shrink-0 transition-transform duration-200 ${
                             isOpen ? "rotate-45" : ""
                           }`}
                         >
@@ -150,7 +150,7 @@ export default function QuestionsFrequentes() {
                         </span>
                       </button>
                       {isOpen && (
-                        <div className="px-7 pb-6 pt-4 text-gray-600 leading-relaxed border-t border-gray-100">
+                        <div className="px-7 pb-6 pt-4 text-white/70 leading-relaxed border-t border-white/10">
                           {item.a}
                         </div>
                       )}

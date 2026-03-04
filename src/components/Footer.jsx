@@ -25,7 +25,7 @@ export default function Footer() {
             {/* Réseaux sociaux */}
             <div className="flex gap-4 mt-6">
               <a
-                href="https://www.linkedin.com/company/delven"
+                href="https://www.linkedin.com/in/hugo-bayart-405764396?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:border-[#151769] hover:text-[#151769] transition-colors"
@@ -36,7 +36,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://www.instagram.com/delven"
+                href="https://www.instagram.com/delven_france?igsh=Z3ZrcXZiajhla3My&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:border-[#151769] hover:text-[#151769] transition-colors"

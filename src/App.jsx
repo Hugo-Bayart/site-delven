@@ -193,13 +193,13 @@ export default function App() {
               </div>
             </div>
 
-            <div className="relative max-w-md mx-auto w-full">
+            <div className="relative max-w-4xl mx-auto w-full -mt-64">
               <div
                 className="relative overflow-hidden"
                 style={{ clipPath: "polygon(15% 0%, 100% 0%, 100% 85%, 85% 100%, 0% 100%, 0% 15%)" }}
               >
                 <img
-                  src="/AZr_KsPQH9eWcqFqR5pYgw-AZr_KsPQ4O_oMG-ylwItVA.jpg"
+                  src="/imagecouverture.png"
                   alt="Logiciel sur mesure pour PME — Delven"
                   className="w-full h-auto"
                   loading="eager"
