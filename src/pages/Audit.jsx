@@ -21,11 +21,35 @@ export default function Audit() {
     budget: "",
   });
 
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSent(true);
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch("/api/audit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form)
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.error || "Erreur lors de l'envoi");
+      }
+
+      setSent(true);
+      setForm({ nom: "", email: "", telephone: "", entreprise: "", secteur: "", salaries: "", probleme: "", budget: "" });
+    } catch (err) {
+      setError(err.message || "Une erreur est survenue. Veuillez réessayer.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -68,6 +92,11 @@ export default function Audit() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
+                {error && (
+                  <div className="bg-red-50 border border-red-200 rounded-lg p-3 text-red-700 text-sm">
+                    {error}
+                  </div>
+                )}
                 {/* Ligne nom / email */}
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
@@ -186,9 +215,10 @@ export default function Audit() {
 
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#151769] text-white rounded-xl font-bold text-base hover:bg-[#0f1150] transition-colors shadow-lg mt-2"
+                  disabled={loading}
+                  className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#151769] text-white rounded-xl font-bold text-base hover:bg-[#0f1150] transition-colors shadow-lg mt-2 disabled:opacity-50"
                 >
-                  Envoyer ma demande d'audit
+                  {loading ? "Envoi en cours..." : "Envoyer ma demande d'audit"}
                   <ArrowRightIcon className="h-5 w-5" />
                 </button>
 
