@@ -1,9 +1,9 @@
 // api/audit.js
 /* eslint-env node */
 /* global process */
-import nodemailer from "nodemailer";
+const nodemailer = require("nodemailer");
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).end();
 
   try {
@@ -63,4 +63,4 @@ export default async function handler(req, res) {
     console.error("audit error:", err);
     return res.status(500).json({ ok: false, error: "server_error" });
   }
-}
+};
