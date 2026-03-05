@@ -82,7 +82,7 @@ export default function Contact() {
               required
             />
             <input
-              type="tel"
+              type="text"
               name="phone"
               value={form.phone}
               onChange={handleChange}

@@ -129,7 +129,7 @@ export default function Audit() {
                   <div>
                     <label className="block text-xs font-semibold text-gray-700 mb-1.5">Téléphone</label>
                     <input
-                      type="tel"
+                      type="text"
                       name="telephone"
                       value={form.telephone}
                       onChange={handleChange}
