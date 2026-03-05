@@ -42,6 +42,7 @@ export default function Contact() {
         <h1 className="text-2xl font-bold tracking-tight mb-6 text-center">
           Contactez-nous
         </h1>
+        {/* Version 2.0 */}
 
         {sent ? (
           <div className="bg-green-50 border border-green-200 rounded-2xl p-10 text-center w-full max-w-lg">
