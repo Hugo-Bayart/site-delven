@@ -55,6 +55,9 @@ export default function Header() {
           <Link to="/" className="hover:text-accent transition-colors">
             Accueil
           </Link>
+          <Link to="/quiz" className="hover:text-accent transition-colors">
+            Quiz
+          </Link>
           <Link to="/a-propos" className="hover:text-accent transition-colors">
             À propos
           </Link>

@@ -146,6 +146,9 @@ export default function App() {
               <img src="/logo-delven-outline.png" alt="Delven — Logiciels sur mesure pour PME" className="h-12" />
             </Link>
             <nav className="flex items-center gap-8" aria-label="Navigation principale">
+              <Link to="/quiz" className="text-white/90 hover:text-white transition-colors hidden md:block">
+                Quiz
+              </Link>
               <Link to="/a-propos" className="text-white/90 hover:text-white transition-colors hidden md:block">
                 À propos
               </Link>
