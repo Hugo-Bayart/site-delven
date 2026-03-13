@@ -1,39 +1,36 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import App from "./App";
-import Quiz from "./pages/Quiz";
-import AuditIA from "./pages/AuditIA";
-import FormationsIA from "./pages/FormationsIA";
-import DeveloppementIA from "./pages/DeveloppementIA";
 import APropos from "./pages/APropos";
 import Contact from "./pages/Contact";
 import MentionsLegales from "./pages/MentionsLegales";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
-import IntelligenceArtificielle from "./pages/IntelligenceArtificielle";
-import ServicesInformatiques from "./pages/ServicesInformatiques";
 import QuestionsFrequentes from "./pages/QuestionsFrequentes";
 import Audit from "./pages/Audit";
+import Methode from "./pages/Methode";
+import CasClientCticCongo from "./pages/CasClientCticCongo";
+import Tarifs from "./pages/Tarifs";
 import "./index.css"; // <-- Tailwind & styles
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/quiz" element={<Quiz />} />
-        <Route path="/intelligence-artificielle" element={<IntelligenceArtificielle />} />
-        <Route path="/services-informatiques" element={<ServicesInformatiques />} />
-        <Route path="/offres/audit-ia" element={<AuditIA />} />
-        <Route path="/offres/formations-ia" element={<FormationsIA />} />
-        <Route path="/offres/developpement-ia" element={<DeveloppementIA />} />
-        <Route path="/a-propos" element={<APropos />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/mentions-legales" element={<MentionsLegales />} />
-        <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
-        <Route path="/questions-frequentes" element={<QuestionsFrequentes />} />
-        <Route path="/audit" element={<Audit />} />
-      </Routes>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/a-propos" element={<APropos />} />
+          <Route path="/methode" element={<Methode />} />
+          <Route path="/cas-client/ctic-congo" element={<CasClientCticCongo />} />
+          <Route path="/tarifs" element={<Tarifs />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/mentions-legales" element={<MentionsLegales />} />
+          <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
+          <Route path="/questions-frequentes" element={<QuestionsFrequentes />} />
+          <Route path="/audit" element={<Audit />} />
+        </Routes>
+      </BrowserRouter>
+    </HelmetProvider>
   </React.StrictMode>
 );

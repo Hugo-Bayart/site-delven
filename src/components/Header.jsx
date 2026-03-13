@@ -4,11 +4,13 @@ import { Link, useLocation } from "react-router-dom";
 export default function Header() {
   const [hidden, setHidden] = useState(false);
   const [elevated, setElevated] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const lastY = useRef(0);
   const { pathname } = useLocation();
 
   useEffect(() => {
     setHidden(false);
+    setMenuOpen(false);
     window.scrollTo(0, 0);
   }, [pathname]);
 
@@ -50,26 +52,48 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Navigation */}
-        <nav className="flex items-center gap-8" aria-label="Navigation principale">
-          <Link to="/" className="hover:text-accent transition-colors">
-            Accueil
+        <div className="relative flex items-center gap-3">
+          <Link
+            to="/contact"
+            className="px-5 py-2.5 rounded-lg border border-white/30 text-white font-medium hover:bg-white/10 transition-colors"
+          >
+            Contact
           </Link>
-          <Link to="/quiz" className="hover:text-accent transition-colors">
-            Quiz
-          </Link>
-          <Link to="/a-propos" className="hover:text-accent transition-colors">
-            À propos
-          </Link>
-          {pathname !== "/audit" && pathname !== "/a-propos" && (
-            <Link
-              to="/audit"
-              className="px-6 py-2.5 bg-[#fef3c7] text-[#151769] rounded-full font-semibold hover:bg-[#fde68a] transition-colors"
+
+          <button
+            type="button"
+            onClick={() => setMenuOpen((prev) => !prev)}
+            className="px-4 py-2.5 rounded-lg border border-white/30 text-white font-medium hover:bg-white/10 transition-colors"
+            aria-label="Ouvrir le menu"
+            aria-expanded={menuOpen}
+          >
+            Menu
+          </button>
+
+          {menuOpen && (
+            <nav
+              className="absolute right-0 top-14 w-56 bg-white text-gray-900 rounded-2xl shadow-2xl border border-gray-200 p-3"
+              aria-label="Navigation principale"
             >
-              Audit gratuit
-            </Link>
+              <div className="flex flex-col text-sm">
+                <Link to="/" className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">Accueil</Link>
+                <Link to="/a-propos" className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">A propos</Link>
+                <Link to="/methode" className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">Methode</Link>
+                <Link to="/cas-client/ctic-congo" className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">Cas client</Link>
+                <Link to="/tarifs" className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">Tarifs</Link>
+                <Link to="/questions-frequentes" className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">FAQ</Link>
+                <Link to="/contact" className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">Contact</Link>
+                <div className="my-2 border-t border-gray-200" />
+                <Link
+                  to="/audit"
+                  className="px-3 py-2.5 rounded-lg bg-[#fef3c7] text-[#151769] font-semibold hover:bg-[#fde68a] transition-colors text-center"
+                >
+                  Audit gratuit
+                </Link>
+              </div>
+            </nav>
           )}
-        </nav>
+        </div>
       </div>
     </header>
   );

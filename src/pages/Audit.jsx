@@ -1,12 +1,26 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Layout from "../components/Layout";
-import {
-  CheckCircleIcon,
-  ArrowRightIcon,
-  BuildingOffice2Icon,
-  UserGroupIcon,
-  WrenchScrewdriverIcon,
-} from "@heroicons/react/24/outline";
+import { ArrowRightIcon, CheckCircleIcon } from "@heroicons/react/24/outline";
+
+const steps = [
+  {
+    num: "1",
+    title: "Vous nous decrivez votre situation",
+    text: "Via le formulaire ci-dessous, vous nous donnez les grandes lignes : votre activite, vos outils actuels, ce qui coince.",
+  },
+  {
+    num: "2",
+    title: "On echange ensemble",
+    text: "Un appel ou visio de 30-45 min pour creuser. On pose des questions, on comprend vos flux, on identifie les points de friction.",
+  },
+  {
+    num: "3",
+    title: "Vous recevez une analyse claire",
+    text: "Un document qui resume ce qu'on a compris de votre fonctionnement, les taches automatisables, les gains estimes (temps, erreurs, clarte) et une proposition chiffree si un logiciel fait sens.",
+  },
+];
 
 export default function Audit() {
   const [sent, setSent] = useState(false);
@@ -20,7 +34,6 @@ export default function Audit() {
     probleme: "",
     budget: "",
   });
-
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -35,7 +48,7 @@ export default function Audit() {
       const response = await fetch("/api/audit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form)
+        body: JSON.stringify(form),
       });
 
       if (!response.ok) {
@@ -44,9 +57,18 @@ export default function Audit() {
       }
 
       setSent(true);
-      setForm({ nom: "", email: "", telephone: "", entreprise: "", secteur: "", salaries: "", probleme: "", budget: "" });
+      setForm({
+        nom: "",
+        email: "",
+        telephone: "",
+        entreprise: "",
+        secteur: "",
+        salaries: "",
+        probleme: "",
+        budget: "",
+      });
     } catch (err) {
-      setError(err.message || "Une erreur est survenue. Veuillez réessayer.");
+      setError(err.message || "Une erreur est survenue. Veuillez reessayer.");
     } finally {
       setLoading(false);
     }
@@ -54,41 +76,64 @@ export default function Audit() {
 
   return (
     <Layout>
-      {/* ── Hero ── */}
-      <section className="bg-[#151769] py-20 px-8 md:px-16">
-        <div className="max-w-4xl mx-auto text-center text-white">
-          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-6 bg-white/10 border border-white/20 text-white/80">
-            Gratuit · Sans engagement
-          </span>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-white">
-            Demandez votre <span className="text-[#fde68a]">audit logiciel</span> gratuit
-          </h1>
-          <p className="text-lg text-white/75 max-w-2xl mx-auto leading-relaxed">
-            En 2 à 3 séances, nous analysons vos processus internes, identifions les gains et vous
-            proposons une solution sur mesure . Sans rien à payer pour commencer.
+      <Helmet>
+        <title>Diagnostic gratuit | Delven — Logiciels sur mesure pour PME</title>
+        <meta
+          name="description"
+          content="Demandez un diagnostic gratuit de vos processus. On analyse votre fonctionnement et on vous dit ce qu'un logiciel sur mesure peut vous apporter. Sans engagement."
+        />
+      </Helmet>
+
+      <section className="bg-[#151769] py-20 px-8 md:px-16 relative overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: `
+              radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(255,255,255,0.08) 0%, transparent 50%),
+              repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,0.03) 35px, rgba(255,255,255,0.03) 70px)
+            `,
+          }}
+        />
+
+        <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-white">Diagnostic gratuit de vos processus</h1>
+          <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+            En 2-3 echanges, on analyse votre fonctionnement et on vous dit clairement ce qu'un logiciel sur mesure peut vous apporter. Sans engagement.
           </p>
         </div>
       </section>
 
-      {/* ── Formulaire + colonne droite ── */}
       <section className="py-16 px-8 md:px-16 bg-white">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-5 gap-12">
+        <div className="max-w-6xl mx-auto">
+          <p className="text-[#151769] font-semibold uppercase tracking-widest text-sm mb-3 text-center">Comment ca se passe</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10 text-center">Le diagnostic en 3 temps</h2>
 
-          {/* Formulaire */}
+          <div className="grid md:grid-cols-3 gap-6">
+            {steps.map((step) => (
+              <article key={step.num} className="bg-gray-50 border border-gray-200 rounded-3xl p-7">
+                <div className="w-10 h-10 bg-[#151769] rounded-full flex items-center justify-center text-white font-bold mb-4">
+                  {step.num}
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3">{step.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{step.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-8 md:px-16 bg-gray-100">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-5 gap-10">
           <div className="md:col-span-3">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Parlez-nous de votre situation</h2>
-            <p className="text-gray-500 text-sm mb-8">
-              Plus vous êtes précis, plus notre retour sera concret et utile.
-            </p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">Demarrer le diagnostic</h2>
+            <p className="text-gray-500 text-sm mb-8">Remplissez ce formulaire. On revient vers vous sous 24h ouvrées.</p>
 
             {sent ? (
               <div className="bg-green-50 border border-green-200 rounded-2xl p-10 text-center">
                 <CheckCircleIcon className="h-12 w-12 text-green-500 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Demande reçue !</h3>
-                <p className="text-gray-600 text-sm">
-                  Nous reviendrons vers vous sous <strong>24h ouvrées</strong> pour planifier une
-                  première séance de travail.
-                </p>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Demande envoyee !</h3>
+                <p className="text-gray-600 text-sm">On revient vers vous sous 24h ouvrées.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
@@ -97,19 +142,20 @@ export default function Audit() {
                     {error}
                   </div>
                 )}
-                {/* Ligne nom / email */}
+
+                <div>
+                  <label className="block text-xs font-semibold text-gray-700 mb-1.5">Nom complet *</label>
+                  <input
+                    name="nom"
+                    value={form.nom}
+                    onChange={handleChange}
+                    required
+                    placeholder="Jean Dupont"
+                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#151769] focus:border-transparent"
+                  />
+                </div>
+
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-semibold text-gray-700 mb-1.5">Prénom & Nom *</label>
-                    <input
-                      name="nom"
-                      value={form.nom}
-                      onChange={handleChange}
-                      required
-                      placeholder="Jean Dupont"
-                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#151769] focus:border-transparent"
-                    />
-                  </div>
                   <div>
                     <label className="block text-xs font-semibold text-gray-700 mb-1.5">Email professionnel *</label>
                     <input
@@ -122,158 +168,193 @@ export default function Audit() {
                       className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#151769] focus:border-transparent"
                     />
                   </div>
-                </div>
-
-                {/* Ligne téléphone / entreprise */}
-                <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-gray-700 mb-1.5">Téléphone</label>
+                    <label className="block text-xs font-semibold text-gray-700 mb-1.5">Telephone *</label>
                     <input
                       type="text"
                       name="telephone"
                       value={form.telephone}
                       onChange={handleChange}
+                      required
                       placeholder="+33 6 00 00 00 00"
                       className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#151769] focus:border-transparent"
                     />
                   </div>
-                  <div>
-                    <label className="block text-xs font-semibold text-gray-700 mb-1.5">Nom de l'entreprise *</label>
-                    <input
-                      name="entreprise"
-                      value={form.entreprise}
-                      onChange={handleChange}
-                      required
-                      placeholder="Ma Société SAS"
-                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#151769] focus:border-transparent"
-                    />
-                  </div>
                 </div>
 
-                {/* Ligne secteur / salariés */}
+                <div>
+                  <label className="block text-xs font-semibold text-gray-700 mb-1.5">Nom de l'entreprise *</label>
+                  <input
+                    name="entreprise"
+                    value={form.entreprise}
+                    onChange={handleChange}
+                    required
+                    placeholder="Ma Societe"
+                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#151769] focus:border-transparent"
+                  />
+                </div>
+
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-gray-700 mb-1.5">Secteur d'activité</label>
-                    <input
+                    <label className="block text-xs font-semibold text-gray-700 mb-1.5">Secteur d'activite *</label>
+                    <select
                       name="secteur"
                       value={form.secteur}
                       onChange={handleChange}
-                      placeholder="Commerce, Logistique, BTP..."
-                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#151769] focus:border-transparent"
-                    />
+                      required
+                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#151769] focus:border-transparent"
+                    >
+                      <option value="">Selectionner</option>
+                      <option>Industrie</option>
+                      <option>Services</option>
+                      <option>Commerce</option>
+                      <option>BTP</option>
+                      <option>Sante</option>
+                      <option>Autre</option>
+                    </select>
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-gray-700 mb-1.5">Nombre de salariés</label>
+                    <label className="block text-xs font-semibold text-gray-700 mb-1.5">Nombre de salaries *</label>
                     <select
                       name="salaries"
                       value={form.salaries}
                       onChange={handleChange}
+                      required
                       className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#151769] focus:border-transparent"
                     >
-                      <option value="">Sélectionner</option>
-                      <option>1 – 10</option>
-                      <option>11 – 50</option>
-                      <option>51 – 200</option>
-                      <option>201 – 500</option>
-                      <option>500+</option>
+                      <option value="">Selectionner</option>
+                      <option>1-10</option>
+                      <option>11-30</option>
+                      <option>31-50</option>
+                      <option>51-100</option>
+                      <option>100+</option>
                     </select>
                   </div>
                 </div>
 
-                {/* Problème principal */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-700 mb-1.5">
-                    Décrivez vos principaux problèmes de processus *
-                  </label>
+                  <label className="block text-xs font-semibold text-gray-700 mb-1.5">Decrivez votre situation en quelques lignes *</label>
                   <textarea
                     name="probleme"
                     value={form.probleme}
                     onChange={handleChange}
                     required
-                    rows={4}
-                    placeholder="Ex : on ressaisit les mêmes données dans 3 outils différents, nos rapports prennent 2h à préparer chaque lundi, on n'a pas de visibilité en temps réel sur nos stocks..."
+                    rows={5}
+                    placeholder="Quels outils utilisez-vous ? Qu'est-ce qui vous prend du temps ou vous pose probleme ?"
                     className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#151769] focus:border-transparent resize-none"
                   />
                 </div>
 
-                {/* Budget */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-700 mb-1.5">Budget envisagé (optionnel)</label>
+                  <label className="block text-xs font-semibold text-gray-700 mb-1.5">Budget approximatif envisage (optionnel)</label>
                   <select
                     name="budget"
                     value={form.budget}
                     onChange={handleChange}
                     className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#151769] focus:border-transparent"
                   >
-                    <option value="">Je ne sais pas encore</option>
-                    <option>Moins de 10 000 €</option>
-                    <option>10 000 – 30 000 €</option>
-                    <option>30 000 – 80 000 €</option>
-                    <option>80 000 € et plus</option>
+                    <option value="">Je ne sais pas</option>
+                    <option>Moins de 5 000 EUR</option>
+                    <option>5 000 - 15 000 EUR</option>
+                    <option>15 000 - 30 000 EUR</option>
+                    <option>Plus de 30 000 EUR</option>
                   </select>
                 </div>
 
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#151769] text-white rounded-xl font-bold text-base hover:bg-[#0f1150] transition-colors shadow-lg mt-2 disabled:opacity-50"
+                  className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#151769] text-white rounded-xl font-bold text-base hover:bg-[#0f1150] transition-colors shadow-lg disabled:opacity-50"
                 >
-                  {loading ? "Envoi en cours..." : "Envoyer ma demande d'audit"}
+                  {loading ? "Envoi en cours..." : "Envoyer ma demande"}
                   <ArrowRightIcon className="h-5 w-5" />
                 </button>
-
-                <p className="text-xs text-gray-400 text-center">
-                  Réponse sous 24h ouvrées · Aucun engagement · Données confidentielles
-                </p>
               </form>
             )}
           </div>
 
-          {/* Colonne droite : réassurance */}
           <div className="md:col-span-2 space-y-6">
-            <div className="bg-[#151769] rounded-2xl p-7 text-white">
-              <h3 className="font-bold text-lg mb-4">Ce que vous obtenez</h3>
-              <ul className="space-y-3 text-sm">
+            <div className="bg-white border border-gray-200 rounded-2xl p-7">
+              <h3 className="font-bold text-gray-900 mb-4 text-lg">Apres le diagnostic, vous aurez :</h3>
+              <ul className="space-y-3 text-sm text-gray-700">
                 {[
-                  "Cartographie de vos processus actuels",
-                  "Liste des tâches automatisables",
-                  "Estimation du temps et des coûts économisés",
-                  "Proposition de projet logiciel sur mesure chiffrée",
-                  "Échanges directs avec nos développeurs",
+                  "Une vision claire de vos processus actuels",
+                  "Les points de friction identifies",
+                  "Une estimation des gains possibles",
+                  "Une proposition chiffree (sans engagement)",
+                  "La liberte de continuer ou non",
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-2.5 text-white/85">
-                    <CheckCircleIcon className="h-4 w-4 text-[#fde68a] flex-shrink-0 mt-0.5" />
+                  <li key={item} className="flex items-start gap-2.5">
+                    <CheckCircleIcon className="h-4 w-4 text-[#151769] flex-shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="bg-gray-50 border border-gray-200 rounded-2xl p-7">
-              <h3 className="font-bold text-gray-900 mb-4 text-sm uppercase tracking-widest">Qui est concerné ?</h3>
-              <div className="space-y-4">
+            <div className="bg-white border border-gray-200 rounded-2xl p-7">
+              <h3 className="font-bold text-gray-900 mb-4 text-lg">C'est pour vous si :</h3>
+              <ul className="space-y-3 text-sm text-gray-700">
                 {[
-                  { icon: BuildingOffice2Icon, label: "PME de 10 à 500 salariés" },
-                  { icon: UserGroupIcon, label: "Équipes avec des processus manuels répétitifs" },
-                  { icon: WrenchScrewdriverIcon, label: "Entreprises qui veulent remplacer Excel ou un ERP rigide" },
-                ].map(({ icon: Icon, label }) => (
-                  <div key={label} className="flex items-start gap-3">
-                    <Icon className="h-5 w-5 text-[#151769] flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-600">{label}</span>
-                  </div>
+                  "Vous etes une PME de 10 a 200 salaries",
+                  "Vous gerez encore beaucoup de choses sur Excel, papier ou outils eparpilles",
+                  "Vous sentez que vos outils actuels vous freinent",
+                  "Vous avez deja cherche un logiciel mais rien ne collait vraiment",
+                  "Vous voulez un avis exterieur honnete, sans pression commerciale",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2.5">
+                    <CheckCircleIcon className="h-4 w-4 text-[#151769] flex-shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
                 ))}
-              </div>
-            </div>
-
-            <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6">
-              <p className="text-sm text-amber-900 leading-relaxed">
-                <strong className="block mb-1">100% gratuit, vraiment.</strong>
-                L'audit n'engage à rien. Si notre proposition ne vous convient pas, vous repartez
-                quand même avec un diagnostic précis de vos processus.
-              </p>
+              </ul>
             </div>
           </div>
+        </div>
+      </section>
 
+      <section className="py-16 px-8 md:px-16 bg-white">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-5">
+          {[
+            {
+              title: "100% gratuit",
+              text: "Le diagnostic ne coute rien et ne vous engage a rien.",
+            },
+            {
+              title: "Reponse sous 24h",
+              text: "On revient vers vous rapidement pour planifier l'echange.",
+            },
+            {
+              title: "Sans jargon",
+              text: "On vous parle clairement, comme a un humain, pas a un technicien.",
+            },
+          ].map((item) => (
+            <div key={item.title} className="bg-gray-50 border border-gray-200 rounded-2xl p-6 text-center">
+              <h3 className="text-lg font-bold text-[#151769] mb-2">{item.title}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="py-16 px-8 md:px-16 bg-gray-100">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Une question avant de vous lancer ?</h2>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Link
+              to="/questions-frequentes"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#151769] text-white rounded-xl font-semibold hover:bg-[#0f1150] transition-colors"
+            >
+              Consultez notre FAQ
+              <ArrowRightIcon className="h-5 w-5" />
+            </Link>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-[#151769] text-[#151769] rounded-xl font-semibold hover:bg-[#151769]/5 transition-colors"
+            >
+              Contactez-nous directement
+            </Link>
+          </div>
         </div>
       </section>
     </Layout>

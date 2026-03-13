@@ -1,86 +1,108 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 const faqSections = [
   {
-    categorie: "Notre offre",
+    categorie: "Le diagnostic gratuit",
     questions: [
       {
-        q: "Qu'est-ce qu'un logiciel interne sur mesure ?",
-        a: "Un logiciel interne sur mesure est un outil développé spécifiquement pour les processus d'une entreprise, en opposition aux ERP généralistes. Il automatise vos tâches répétitives, centralise vos données et s'adapte exactement à vos besoins métier. Contrairement à un ERP, vous ne payez que ce dont vous avez besoin, et l'outil est conçu autour de vos équipes. Pas l'inverse.",
+        q: "C'est vraiment gratuit ?",
+        a: "Oui. On échange, on analyse, on vous donne une vision claire. Si vous ne voulez pas aller plus loin, vous ne payez rien.",
       },
       {
-        q: "Pourquoi choisir un logiciel sur mesure plutôt qu'un ERP ?",
-        a: "Les ERP comme SAP ou Sage sont puissants mais souvent trop rigides, trop chers et trop complexes pour des PME en croissance. Un logiciel sur mesure Delven est conçu pour votre métier précis, adopté naturellement par vos équipes car pensé avec elles, et peut évoluer à votre rythme. Vous êtes propriétaire de l'outil, sans licence récurrente.",
+        q: "Combien de temps ça prend ?",
+        a: "Comptez 2 à 3 échanges sur environ une semaine. Le premier appel dure 30-45 minutes.",
       },
       {
-        q: "Quels types de logiciels développez-vous ?",
-        a: "Nous développons des outils de gestion interne (CRM simplifié, suivi de commandes, gestion de stock, tableaux de bord), des outils métier spécifiques (workflow de validation, outils de reporting, bases de données internes), et des automatisations qui connectent vos outils existants. Chaque projet est défini avec vous lors de l'audit.",
+        q: "Qu'est-ce que je reçois à la fin ?",
+        a: "Un document clair avec : ce qu'on a compris de vos processus, les points de friction, les gains estimés, et une proposition chiffrée si un logiciel fait sens.",
       },
       {
-        q: "Vous développez aussi des applications mobiles ou des sites web ?",
-        a: "Notre cœur de métier est le logiciel interne (application web accessible depuis n'importe quel appareil). Nous développons des interfaces adaptées mobile quand c'est nécessaire. Pour les sites vitrines ou e-commerce, nous pouvons vous orienter selon vos besoins.",
+        q: "Je suis engagé après le diagnostic ?",
+        a: "Non. Vous décidez librement de continuer ou non.",
       },
     ],
   },
   {
-    categorie: "L'audit gratuit",
+    categorie: "Le développement",
     questions: [
       {
-        q: "En quoi consiste l'audit logiciel Delven ?",
-        a: "L'audit Delven est une analyse structurée de vos processus internes sur 2 à 3 séances de travail. Nous cartographions vos flux actuels, identifions les tâches manuelles chronophages, estimons les gains potentiels en temps et en coût, puis vous proposons un projet logiciel chiffré et priorisé. Tout ça sans engagement et sans jargon technique.",
+        q: "Combien de temps pour développer un logiciel ?",
+        a: "Ça dépend de la complexité. En général, entre 1 et 4 mois. On vous donne une estimation précise après le diagnostic.",
       },
       {
-        q: "L'audit est-il vraiment gratuit ? Pourquoi ?",
-        a: "Oui, l'audit initial est entièrement gratuit. C'est notre façon de travailler : nous voulons d'abord comprendre votre situation et vous apporter de la valeur avant de parler budget. Si notre proposition vous convient, on va plus loin ensemble. Sinon, vous repartez avec un diagnostic utile.",
+        q: "Je peux suivre l'avancement ?",
+        a: "Oui. Vous avez accès à des versions intermédiaires et on fait des points réguliers. Pas d'effet tunnel.",
       },
       {
-        q: "Combien de temps dure l'audit ?",
-        a: "L'audit se déroule en 2 à 3 séances d'environ 1h30 chacune, sur une période de 2 à 3 semaines. Il peut se faire en visioconférence ou en présentiel selon votre localisation. À l'issue, vous recevez une proposition de projet écrite et détaillée.",
+        q: "Et si je veux modifier des choses en cours de route ?",
+        a: "C'est prévu. On ajuste ensemble tant que ça reste dans le périmètre défini. Les changements majeurs font l'objet d'un avenant.",
       },
       {
-        q: "Qui participe à l'audit côté client ?",
-        a: "Idéalement, un décideur (dirigeant ou responsable) et un ou deux utilisateurs clés des processus concernés. Ce sont eux qui connaissent le mieux les friction quotidiennes. Pas besoin de profil technique.",
+        q: "Qui s'occupe du projet côté Delven ?",
+        a: "Un interlocuteur unique du début à la fin. Vous savez toujours à qui parler.",
       },
     ],
   },
   {
-    categorie: "Développement & projet",
+    categorie: "Le produit final",
     questions: [
       {
-        q: "Combien coûte un logiciel sur mesure ?",
-        a: "Le prix dépend du périmètre fonctionnel défini pendant l'audit. Un premier module fonctionnel peut démarrer à quelques milliers d'euros. Le rapport qualité / ROI est notre priorité : on dimensionne le projet à votre budget réel et on priorise les fonctions à plus fort impact.",
+        q: "Le logiciel m'appartient ?",
+        a: "Oui. À la livraison, le code et le logiciel sont à vous.",
       },
       {
-        q: "Combien de temps pour avoir un logiciel opérationnel ?",
-        a: "Un premier module fonctionnel peut être livré en 6 à 12 semaines selon la complexité. Nous travaillons de façon itérative : vous voyez le logiciel évoluer à chaque sprint et pouvez valider au fur et à mesure.",
+        q: "Ça marche sur quoi ?",
+        a: "On développe des applications web accessibles depuis n'importe quel navigateur. Pas d'installation sur chaque poste.",
       },
       {
-        q: "Qui possède le logiciel développé ?",
-        a: "Vous. Le code source et tous les droits vous appartiennent. Pas de dépendance à une licence Delven. Vous pouvez faire évoluer le logiciel avec nous ou avec une autre équipe technique.",
+        q: "Mes données sont sécurisées ?",
+        a: "Oui. Hébergement sécurisé, sauvegardes régulières, accès protégés. On suit les bonnes pratiques et le RGPD.",
       },
       {
-        q: "Assurez-vous la maintenance après la livraison ?",
-        a: "Oui. Nous proposons des contrats de maintenance et d'évolution pour accompagner votre logiciel dans la durée : corrections de bugs, mises à jour de sécurité, nouvelles fonctionnalités. Le logiciel grandit avec votre entreprise.",
+        q: "Et si j'ai un bug après la livraison ?",
+        a: "On assure un support post-lancement. Les bugs sont corrigés. Pour les évolutions, on propose des forfaits maintenance.",
       },
     ],
   },
   {
-    categorie: "Cibles & secteurs",
+    categorie: "Prix et paiement",
     questions: [
       {
-        q: "Quelles entreprises peuvent bénéficier de vos services ?",
-        a: "Toutes les PME et entreprises en croissance (10 à 500 salariés) avec des processus manuels à automatiser. Nos clients sont dans des secteurs variés : négoce, services, BTP, santé, logistique, immobilier, formation, etc. Si vous avez des Excel partout, vous avez un besoin.",
+        q: "Combien ça coûte ?",
+        a: "Ça dépend du projet. Fourchette indicative : de 3 000 € pour un outil simple à 25 000 €+ pour un projet complexe. Le diagnostic permet de chiffrer précisément.",
       },
       {
-        q: "Travaillez-vous avec des entreprises hors de France ?",
-        a: "Oui. Nous accompagnons des entreprises en France et à l'international, notamment en Afrique francophone (Congo, Côte d'Ivoire, Sénégal, etc.) et dans les DOM-TOM. Nos audits et suivis de projet se font en distanciel sans difficulté.",
+        q: "Je peux payer en plusieurs fois ?",
+        a: "Oui. On propose un paiement en 3 étapes : au lancement, à mi-projet, à la livraison.",
       },
       {
-        q: "J'ai déjà un outil en place (ERP, Excel...) — est-ce compatible ?",
-        a: "Absolument. Nous pouvons connecter votre nouveau logiciel à vos outils existants via des API ou des exports/imports de données. L'objectif est de réduire la friction, pas d'imposer une refonte complète d'un coup.",
+        q: "Il y a des coûts cachés ?",
+        a: "Non. Le devis détaille tout. Hébergement et maintenance sont en option, clairement indiqués.",
+      },
+    ],
+  },
+  {
+    categorie: "Cible et secteurs",
+    questions: [
+      {
+        q: "C'est pour quelle taille d'entreprise ?",
+        a: "Principalement les PME de 10 à 200 salariés. Assez grandes pour avoir des vrais besoins, assez petites pour qu'un ERP classique soit surdimensionné.",
+      },
+      {
+        q: "Vous travaillez dans quels secteurs ?",
+        a: "Tous. Industrie, services, commerce, BTP, santé… Ce qui compte, c'est le besoin, pas le secteur.",
+      },
+      {
+        q: "Je suis en Afrique francophone, c'est possible ?",
+        a: "Oui. On travaille à distance sans problème. Notre premier client est au Congo.",
+      },
+      {
+        q: "Et si je suis à Toulouse ?",
+        a: "Encore mieux. On peut se rencontrer en personne si vous préférez.",
       },
     ],
   },
@@ -96,6 +118,14 @@ export default function QuestionsFrequentes() {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Questions fréquentes | Delven</title>
+        <meta
+          name="description"
+          content="Tout savoir sur le diagnostic gratuit, le développement, les tarifs et le fonctionnement de Delven. Réponses claires, sans jargon."
+        />
+      </Helmet>
+
       {/* Hero */}
       <section className="bg-[#151769] relative overflow-hidden py-20 px-8 md:px-16">
         <div
@@ -116,7 +146,7 @@ export default function QuestionsFrequentes() {
             Questions fréquentes
           </h1>
           <p className="text-lg text-white/80 max-w-2xl mx-auto">
-            Tout ce que vous devez savoir sur nos logiciels sur mesure, notre processus d'audit et notre façon de travailler.
+            Tout ce que vous voulez savoir avant de nous contacter.
           </p>
         </div>
       </section>
@@ -125,7 +155,7 @@ export default function QuestionsFrequentes() {
       <section className="py-20 px-8 md:px-16 bg-white">
         <div className="max-w-3xl mx-auto space-y-14">
           {faqSections.map((section, secIdx) => (
-            <div key={secIdx}>
+            <div key={secIdx} className="bg-gray-50 border border-gray-200 rounded-3xl p-6 md:p-8">
               <h2 className="text-xl font-bold text-[#151769] uppercase tracking-widest mb-6 pb-3 border-b border-gray-200">
                 {section.categorie}
               </h2>
@@ -167,18 +197,23 @@ export default function QuestionsFrequentes() {
       <section className="py-16 px-8 md:px-16 bg-gray-100">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Vous n'avez pas trouvé votre réponse ?
+            Vous avez une autre question ?
           </h2>
-          <p className="text-gray-600 mb-8">
-            Contactez-nous directement — nous vous répondons sous 24h.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#151769] text-white rounded-xl font-bold text-lg hover:bg-[#0f1150] transition-colors shadow-lg"
-          >
-            Nous contacter
-            <ArrowRightIcon className="h-5 w-5" />
-          </Link>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#151769] text-white rounded-xl font-bold text-lg hover:bg-[#0f1150] transition-colors shadow-lg"
+            >
+              Contactez-nous
+              <ArrowRightIcon className="h-5 w-5" />
+            </Link>
+            <Link
+              to="/audit"
+              className="inline-flex items-center gap-2 px-8 py-4 border border-[#151769] text-[#151769] rounded-xl font-bold text-lg hover:bg-[#151769]/5 transition-colors"
+            >
+              Lancez le diagnostic gratuit
+            </Link>
+          </div>
         </div>
       </section>
     </Layout>

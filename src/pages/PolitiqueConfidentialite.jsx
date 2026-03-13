@@ -1,5 +1,6 @@
 ﻿import React from "react";
 import Layout from "../components/Layout";
+import { Helmet } from "react-helmet-async";
 
 const sections = [
   {
@@ -82,6 +83,11 @@ const sections = [
 export default function PolitiqueConfidentialite() {
   return (
     <Layout>
+      <Helmet>
+        <title>Politique de confidentialité | Delven</title>
+        <meta name="description" content="Protection des données personnelles et conformité RGPD du site Delven." />
+      </Helmet>
+
       {/* Hero */}
       <section className="bg-[#151769] py-16 px-8 md:px-16 relative overflow-hidden">
         <div

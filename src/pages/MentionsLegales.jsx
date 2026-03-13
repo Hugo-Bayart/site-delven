@@ -1,5 +1,6 @@
 ﻿import React from "react";
 import Layout from "../components/Layout";
+import { Helmet } from "react-helmet-async";
 
 const sections = [
   {
@@ -56,6 +57,11 @@ const sections = [
 export default function MentionsLegales() {
   return (
     <Layout>
+      <Helmet>
+        <title>Mentions légales | Delven</title>
+        <meta name="description" content="Mentions légales du site Delven. Éditeur, hébergeur, propriété intellectuelle." />
+      </Helmet>
+
       <section className="bg-[#151769] py-16 px-8 md:px-16 relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-20 pointer-events-none"
