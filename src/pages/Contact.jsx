@@ -192,7 +192,7 @@ export default function Contact() {
               <MapPinIcon className="h-5 w-5 text-[#151769] mt-0.5 flex-shrink-0" />
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">Localisation</p>
-                <p className="text-gray-800 font-medium">Toulouse, France - on travaille aussi a distance partout en francophonie.</p>
+                <p className="text-gray-800 font-medium">Toulouse, France — on travaille aussi à distance partout en francophonie.</p>
               </div>
             </div>
 

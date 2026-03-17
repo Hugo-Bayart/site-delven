@@ -6,20 +6,20 @@ import { CheckCircleIcon } from "@heroicons/react/24/outline";
 
 const approche = [
   {
-    title: "Ecoute",
-    text: "On part de votre realite, pas d'un template.",
+    title: "Écoute",
+    text: "On part de votre réalité, pas d'un template.",
   },
   {
-    title: "Simplicite",
-    text: "Interface claire, adoption rapide par vos equipes.",
+    title: "Simplicité",
+    text: "Interface claire, adoption rapide par vos équipes.",
   },
   {
-    title: "Flexibilite",
-    text: "Le logiciel evolue quand votre entreprise evolue.",
+    title: "Flexibilité",
+    text: "Le logiciel évolue quand votre entreprise évolue.",
   },
   {
     title: "Relation directe",
-    text: "Un interlocuteur unique, reactif, disponible.",
+    text: "Un interlocuteur unique, réactif, disponible.",
   },
 ];
 
@@ -47,7 +47,7 @@ export default function APropos() {
         />
         <div className="relative z-10 max-w-5xl mx-auto text-center">
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-6 bg-white/10 border border-white/20 text-white/70">
-            A propos de Delven
+            À propos de Delven
           </span>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-white">Delven, c'est quoi ?</h1>
           <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-10 max-w-3xl mx-auto">
@@ -63,13 +63,13 @@ export default function APropos() {
 
           <div className="space-y-5 text-gray-700 text-[17px] leading-relaxed">
             <p>
-              La plupart des PME fonctionnent avec des outils qui n'ont jamais ete penses pour elles. Excel pour tout,
-              des logiciels generiques qu'on tord dans tous les sens, des process papier qui trainent.
+              La plupart des PME fonctionnent avec des outils qui n'ont jamais été pensés pour elles. Excel pour tout,
+              des logiciels génériques qu'on tord dans tous les sens, des process papier qui traînent.
             </p>
-            <p className="font-semibold text-gray-900">Ca tient. Mais ca freine.</p>
+            <p className="font-semibold text-gray-900">Ça tient. Mais ça freine.</p>
             <p>
-              Les ERP existent, mais ils sont lourds, chers, et penses pour des grandes structures. Resultat : beaucoup
-              de PME restent coincees entre le bricolage et des solutions surdimensionnees.
+              Les ERP existent, mais ils sont lourds, chers, et pensés pour des grandes structures. Résultat : beaucoup
+              de PME restent coincées entre le bricolage et des solutions surdimensionnées.
             </p>
             <p>
               Delven est ne pour proposer une troisieme voie : un logiciel taille exactement pour votre fonctionnement,
@@ -82,14 +82,14 @@ export default function APropos() {
       <section className="py-20 px-8 md:px-16 bg-white">
         <div className="max-w-4xl mx-auto">
           <p className="text-[#151769] font-semibold uppercase tracking-widest text-sm mb-3 text-center">Ce qu'on fait</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10 leading-tight text-center">Notre metier</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10 leading-tight text-center">Notre métier</h2>
 
           <div className="space-y-5 text-gray-700 text-[17px] leading-relaxed text-center">
             <p>
-              On analyse comment vous travaillez. On identifie ce qui coince et ce qui peut etre simplifie.
-              Puis on developpe un logiciel interne unique, pense pour votre equipe.
+              On analyse comment vous travaillez. On identifie ce qui coince et ce qui peut être simplifié.
+              Puis on développe un logiciel interne unique, pensé pour votre équipe.
             </p>
-            <p className="font-semibold text-gray-900">Pas un outil generique. Pas une usine a gaz. Juste ce qu'il vous faut, rien de plus.</p>
+            <p className="font-semibold text-gray-900">Pas un outil générique. Pas une usine à gaz. Juste ce qu'il vous faut, rien de plus.</p>
           </div>
         </div>
       </section>
@@ -120,16 +120,16 @@ export default function APropos() {
 
       <section className="py-20 px-8 md:px-16 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-[#151769] font-semibold uppercase tracking-widest text-sm mb-3">Qui est derriere</p>
+          <p className="text-[#151769] font-semibold uppercase tracking-widest text-sm mb-3">Qui est derrière</p>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Qui je suis</h2>
 
           <div className="space-y-5 text-gray-700 text-[17px] leading-relaxed">
             <p>
-              Je suis Hugo, fondateur de Delven, base a Toulouse. J'ai cree cette entreprise parce que je crois que
-              les PME meritent des outils a leur taille, pas des solutions pensees pour d'autres qu'on leur impose.
+              Je suis Hugo, fondateur de Delven, basé à Toulouse. J'ai créé cette entreprise parce que je crois que
+              les PME méritent des outils à leur taille, pas des solutions pensées pour d'autres qu'on leur impose.
             </p>
             <p className="font-medium text-gray-900">
-              Mon objectif : vous faire gagner du temps, de la clarte, et de la serenite au quotidien.
+              Mon objectif : vous faire gagner du temps, de la clarté, et de la sérénité au quotidien.
             </p>
           </div>
         </div>

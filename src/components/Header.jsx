@@ -77,8 +77,8 @@ export default function Header() {
             >
               <div className="flex flex-col text-sm">
                 <Link to="/" className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">Accueil</Link>
-                <Link to="/a-propos" className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">A propos</Link>
-                <Link to="/methode" className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">Methode</Link>
+                <Link to="/a-propos" className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">À propos</Link>
+                <Link to="/methode" className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">Méthode</Link>
                 <Link to="/cas-client/ctic-congo" className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">Cas client</Link>
                 <Link to="/tarifs" className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">Tarifs</Link>
                 <Link to="/questions-frequentes" className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">FAQ</Link>

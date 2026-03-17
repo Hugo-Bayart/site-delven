@@ -7,37 +7,37 @@ import { ArrowRightIcon, CheckCircleIcon } from "@heroicons/react/24/outline";
 const ranges = [
   {
     title: "Projet simple",
-    desc: "Logiciel interne avec 2-3 fonctionnalites cles\nPME de 10-20 personnes",
-    price: "A partir de 3 000 EUR",
+    desc: "Logiciel interne avec 2-3 fonctionnalités clés\nPME de 10-20 personnes",
+    price: "À partir de 3 000 EUR",
   },
   {
     title: "Projet standard",
     desc: "Logiciel complet, plusieurs modules, 20-50 utilisateurs",
-    price: "Entre 8 000 EUR et 20 000 EUR",
+    price: "Entre 8 000 EUR et 20 000 EUR",
   },
   {
-    title: "Projet avance",
-    desc: "Outil complexe, nombreuses integrations, +50 utilisateurs",
-    price: "Sur devis, a partir de 25 000 EUR",
+    title: "Projet avancé",
+    desc: "Outil complexe, nombreuses intégrations, +50 utilisateurs",
+    price: "Sur devis, à partir de 25 000 EUR",
   },
 ];
 
 const faqItems = [
   {
-    q: "Pourquoi pas de prix fixe affiche ?",
-    a: "Parce qu'un logiciel sur mesure depend de votre contexte. Afficher un prix unique serait soit trop cher pour les petits projets, soit irrealiste pour les gros.",
+    q: "Pourquoi pas de prix fixe affiché ?",
+    a: "Parce qu'un logiciel sur mesure dépend de votre contexte. Afficher un prix unique serait soit trop cher pour les petits projets, soit irréaliste pour les gros.",
   },
   {
     q: "Le diagnostic est vraiment gratuit ?",
-    a: "Oui. On echange, on analyse, on vous donne une vision claire. Si ca ne va pas plus loin, vous ne payez rien.",
+    a: "Oui. On échange, on analyse, on vous donne une vision claire. Si ça ne va pas plus loin, vous ne payez rien.",
   },
   {
     q: "Je peux payer en plusieurs fois ?",
-    a: "Oui, on propose generalement un paiement en 3 etapes : au lancement, a mi-projet, a la livraison.",
+    a: "Oui, on propose généralement un paiement en 3 étapes : au lancement, à mi-projet, à la livraison.",
   },
   {
-    q: "Que se passe-t-il si je veux ajouter des fonctionnalites apres ?",
-    a: "C'est prevu. On etablit un devis pour les evolutions, et on les integre a votre outil existant.",
+    q: "Que se passe-t-il si je veux ajouter des fonctionnalités après ?",
+    a: "C'est prévu. On établit un devis pour les évolutions, et on les intègre à votre outil existant.",
   },
 ];
 
@@ -72,31 +72,31 @@ export default function Tarifs() {
         <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
           <h1 className="text-4xl md:text-5xl font-bold mb-5 text-white">Tarifs clairs, sans surprise</h1>
           <p className="text-lg text-white/80 max-w-3xl mx-auto">
-            Pas de grille rigide. Un prix adapte a votre projet, defini ensemble apres le diagnostic.
+            Pas de grille rigide. Un prix adapté à votre projet, défini ensemble après le diagnostic.
           </p>
         </div>
       </section>
 
       <section className="py-16 px-8 md:px-16 bg-white">
         <div className="max-w-5xl mx-auto">
-          <p className="text-[#151769] font-semibold uppercase tracking-widest text-sm mb-3 text-center">Comment ca marche</p>
+          <p className="text-[#151769] font-semibold uppercase tracking-widest text-sm mb-3 text-center">Comment ça marche</p>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">Notre approche tarifaire</h2>
 
           <div className="space-y-5 text-gray-700 text-[16px] leading-relaxed max-w-4xl mx-auto">
             <p>
-              Chaque entreprise est differente. Un logiciel pour 15 personnes n'a pas le meme cout qu'un outil pour 80 utilisateurs avec 10 modules.
+              Chaque entreprise est différente. Un logiciel pour 15 personnes n'a pas le même coût qu'un outil pour 80 utilisateurs avec 10 modules.
             </p>
             <p>
-              C'est pourquoi on ne propose pas de tarif fixe affiche. Le prix depend de :
+              C'est pourquoi on ne propose pas de tarif fixe affiché. Le prix dépend de :
             </p>
             <ul className="space-y-2 list-disc pl-6">
-              <li>La complexite de vos processus</li>
-              <li>Le nombre de fonctionnalites necessaires</li>
+              <li>La complexité de vos processus</li>
+              <li>Le nombre de fonctionnalités nécessaires</li>
               <li>Le nombre d'utilisateurs</li>
-              <li>Les integrations eventuelles (outils existants, API)</li>
+              <li>Les intégrations éventuelles (outils existants, API)</li>
             </ul>
             <p>
-              Apres le diagnostic gratuit, vous recevez un devis detaille, sans engagement.
+              Après le diagnostic gratuit, vous recevez un devis détaillé, sans engagement.
             </p>
           </div>
         </div>
@@ -118,7 +118,7 @@ export default function Tarifs() {
           </div>
 
           <p className="text-center text-gray-600 mt-8 max-w-3xl mx-auto">
-            Ces fourchettes sont indicatives. Le diagnostic gratuit permet d'affiner precisement selon votre besoin.
+            Ces fourchettes sont indicatives. Le diagnostic gratuit permet d'affiner précisément selon votre besoin.
           </p>
         </div>
       </section>
@@ -131,11 +131,11 @@ export default function Tarifs() {
           <div className="grid md:grid-cols-2 gap-4">
             {[
               "Diagnostic initial gratuit",
-              "Conception et maquettes validees avec vous",
-              "Developpement sur mesure",
+              "Conception et maquettes validées avec vous",
+              "Développement sur mesure",
               "Tests et ajustements avant livraison",
-              "Deploiement et formation de vos equipes",
-              "Support post-lancement (duree selon contrat)",
+              "Déploiement et formation de vos équipes",
+              "Support post-lancement (durée selon contrat)",
             ].map((item) => (
               <div key={item} className="bg-gray-50 border border-gray-200 rounded-2xl p-5 flex items-start gap-3">
                 <CheckCircleIcon className="h-5 w-5 text-[#151769] mt-0.5 flex-shrink-0" />
@@ -149,23 +149,23 @@ export default function Tarifs() {
       <section className="py-16 px-8 md:px-16 bg-gray-100">
         <div className="max-w-5xl mx-auto text-center">
           <p className="text-[#151769] font-semibold uppercase tracking-widest text-sm mb-3">Maintenance</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Et apres la livraison ?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Et après la livraison ?</h2>
           <p className="text-gray-700 text-[16px] leading-relaxed max-w-3xl mx-auto mb-6">
-            On propose des forfaits de maintenance adaptes :
+            On propose des forfaits de maintenance adaptés :
           </p>
           <ul className="max-w-xl mx-auto text-left space-y-2 text-gray-700 mb-6 list-disc pl-6">
             <li>Corrections de bugs</li>
-            <li>Mises a jour techniques</li>
-            <li>Evolutions fonctionnelles a la demande</li>
+            <li>Mises à jour techniques</li>
+            <li>Évolutions fonctionnelles à la demande</li>
           </ul>
-          <p className="font-semibold text-[#151769]">Tarif maintenance : a partir de 150 EUR/mois selon la taille du projet.</p>
+          <p className="font-semibold text-[#151769]">Tarif maintenance : à partir de 150 EUR/mois selon la taille du projet.</p>
         </div>
       </section>
 
       <section className="py-16 px-8 md:px-16 bg-white">
         <div className="max-w-3xl mx-auto">
           <p className="text-[#151769] font-semibold uppercase tracking-widest text-sm mb-3 text-center">
-            Questions frequentes sur les tarifs
+            Questions fréquentes sur les tarifs
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10 text-center">FAQ</h2>
 
@@ -205,7 +205,7 @@ export default function Tarifs() {
               }}
             />
             <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">Vous voulez un chiffrage precis ?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">Vous voulez un chiffrage précis ?</h2>
               <Link
                 to="/audit"
                 className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-[#fef3c7] text-[#151769] rounded-xl font-bold text-lg hover:bg-[#fde68a] transition-colors shadow-lg"

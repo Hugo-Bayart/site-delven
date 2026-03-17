@@ -54,7 +54,7 @@ export default function Footer() {
             <h4 className="text-xs font-bold text-gray-900 uppercase tracking-widest mb-4">Navigation</h4>
             <nav className="flex flex-col gap-2.5 text-sm text-gray-500">
               <Link to="/" className="hover:text-[#151769] transition-colors">Accueil</Link>
-              <Link to="/a-propos" className="hover:text-[#151769] transition-colors">A propos</Link>
+              <Link to="/a-propos" className="hover:text-[#151769] transition-colors">À propos</Link>
               <Link to="/methode" className="hover:text-[#151769] transition-colors">Méthode</Link>
               <Link to="/cas-client/ctic-congo" className="hover:text-[#151769] transition-colors">Cas client</Link>
               <Link to="/tarifs" className="hover:text-[#151769] transition-colors">Tarifs</Link>

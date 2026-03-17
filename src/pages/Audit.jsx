@@ -7,18 +7,18 @@ import { ArrowRightIcon, CheckCircleIcon } from "@heroicons/react/24/outline";
 const steps = [
   {
     num: "1",
-    title: "Vous nous decrivez votre situation",
-    text: "Via le formulaire ci-dessous, vous nous donnez les grandes lignes : votre activite, vos outils actuels, ce qui coince.",
+    title: "Vous nous décrivez votre situation",
+    text: "Via le formulaire ci-dessous, vous nous donnez les grandes lignes : votre activité, vos outils actuels, ce qui coince.",
   },
   {
     num: "2",
-    title: "On echange ensemble",
+    title: "On échange ensemble",
     text: "Un appel ou visio de 30-45 min pour creuser. On pose des questions, on comprend vos flux, on identifie les points de friction.",
   },
   {
     num: "3",
     title: "Vous recevez une analyse claire",
-    text: "Un document qui resume ce qu'on a compris de votre fonctionnement, les taches automatisables, les gains estimes (temps, erreurs, clarte) et une proposition chiffree si un logiciel fait sens.",
+    text: "Un document qui résume ce qu'on a compris de votre fonctionnement, les tâches automatisables, les gains estimés (temps, erreurs, clarté) et une proposition chiffrée si un logiciel fait sens.",
   },
 ];
 
@@ -99,14 +99,14 @@ export default function Audit() {
         <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-white">Diagnostic gratuit de vos processus</h1>
           <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-            En 2-3 echanges, on analyse votre fonctionnement et on vous dit clairement ce qu'un logiciel sur mesure peut vous apporter. Sans engagement.
+            En 2-3 échanges, on analyse votre fonctionnement et on vous dit clairement ce qu'un logiciel sur mesure peut vous apporter. Sans engagement.
           </p>
         </div>
       </section>
 
       <section className="py-16 px-8 md:px-16 bg-white">
         <div className="max-w-6xl mx-auto">
-          <p className="text-[#151769] font-semibold uppercase tracking-widest text-sm mb-3 text-center">Comment ca se passe</p>
+          <p className="text-[#151769] font-semibold uppercase tracking-widest text-sm mb-3 text-center">Comment ça se passe</p>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10 text-center">Le diagnostic en 3 temps</h2>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -126,13 +126,13 @@ export default function Audit() {
       <section className="py-16 px-8 md:px-16 bg-gray-100">
         <div className="max-w-6xl mx-auto grid md:grid-cols-5 gap-10">
           <div className="md:col-span-3">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">Demarrer le diagnostic</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">Démarrer le diagnostic</h2>
             <p className="text-gray-500 text-sm mb-8">Remplissez ce formulaire. On revient vers vous sous 24h ouvrées.</p>
 
             {sent ? (
               <div className="bg-green-50 border border-green-200 rounded-2xl p-10 text-center">
                 <CheckCircleIcon className="h-12 w-12 text-green-500 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Demande envoyee !</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Demande envoyée !</h3>
                 <p className="text-gray-600 text-sm">On revient vers vous sous 24h ouvrées.</p>
               </div>
             ) : (
@@ -169,7 +169,7 @@ export default function Audit() {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-gray-700 mb-1.5">Telephone *</label>
+                    <label className="block text-xs font-semibold text-gray-700 mb-1.5">Téléphone *</label>
                     <input
                       type="text"
                       name="telephone"
@@ -196,7 +196,7 @@ export default function Audit() {
 
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-gray-700 mb-1.5">Secteur d'activite *</label>
+                    <label className="block text-xs font-semibold text-gray-700 mb-1.5">Secteur d'activité *</label>
                     <select
                       name="secteur"
                       value={form.secteur}
@@ -204,17 +204,17 @@ export default function Audit() {
                       required
                       className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#151769] focus:border-transparent"
                     >
-                      <option value="">Selectionner</option>
+                      <option value="">Sélectionner</option>
                       <option>Industrie</option>
                       <option>Services</option>
                       <option>Commerce</option>
                       <option>BTP</option>
-                      <option>Sante</option>
+                      <option>Santé</option>
                       <option>Autre</option>
                     </select>
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-gray-700 mb-1.5">Nombre de salaries *</label>
+                    <label className="block text-xs font-semibold text-gray-700 mb-1.5">Nombre de salariés *</label>
                     <select
                       name="salaries"
                       value={form.salaries}
@@ -222,7 +222,7 @@ export default function Audit() {
                       required
                       className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#151769] focus:border-transparent"
                     >
-                      <option value="">Selectionner</option>
+                      <option value="">Sélectionner</option>
                       <option>1-10</option>
                       <option>11-30</option>
                       <option>31-50</option>
@@ -233,20 +233,20 @@ export default function Audit() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-gray-700 mb-1.5">Decrivez votre situation en quelques lignes *</label>
+                  <label className="block text-xs font-semibold text-gray-700 mb-1.5">Décrivez votre situation en quelques lignes *</label>
                   <textarea
                     name="probleme"
                     value={form.probleme}
                     onChange={handleChange}
                     required
                     rows={5}
-                    placeholder="Quels outils utilisez-vous ? Qu'est-ce qui vous prend du temps ou vous pose probleme ?"
+                    placeholder="Quels outils utilisez-vous ? Qu'est-ce qui vous prend du temps ou vous pose problème ?"
                     className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#151769] focus:border-transparent resize-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-gray-700 mb-1.5">Budget approximatif envisage (optionnel)</label>
+                  <label className="block text-xs font-semibold text-gray-700 mb-1.5">Budget approximatif envisagé (optionnel)</label>
                   <select
                     name="budget"
                     value={form.budget}
@@ -275,14 +275,14 @@ export default function Audit() {
 
           <div className="md:col-span-2 space-y-6">
             <div className="bg-white border border-gray-200 rounded-2xl p-7">
-              <h3 className="font-bold text-gray-900 mb-4 text-lg">Apres le diagnostic, vous aurez :</h3>
+              <h3 className="font-bold text-gray-900 mb-4 text-lg">Après le diagnostic, vous aurez :</h3>
               <ul className="space-y-3 text-sm text-gray-700">
                 {[
                   "Une vision claire de vos processus actuels",
-                  "Les points de friction identifies",
+                  "Les points de friction identifiés",
                   "Une estimation des gains possibles",
-                  "Une proposition chiffree (sans engagement)",
-                  "La liberte de continuer ou non",
+                  "Une proposition chiffrée (sans engagement)",
+                  "La liberté de continuer ou non",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2.5">
                     <CheckCircleIcon className="h-4 w-4 text-[#151769] flex-shrink-0 mt-0.5" />
@@ -296,11 +296,11 @@ export default function Audit() {
               <h3 className="font-bold text-gray-900 mb-4 text-lg">C'est pour vous si :</h3>
               <ul className="space-y-3 text-sm text-gray-700">
                 {[
-                  "Vous etes une PME de 10 a 200 salaries",
-                  "Vous gerez encore beaucoup de choses sur Excel, papier ou outils eparpilles",
+                  "Vous êtes une PME de 10 à 200 salariés",
+                  "Vous gérez encore beaucoup de choses sur Excel, papier ou outils éparpillés",
                   "Vous sentez que vos outils actuels vous freinent",
-                  "Vous avez deja cherche un logiciel mais rien ne collait vraiment",
-                  "Vous voulez un avis exterieur honnete, sans pression commerciale",
+                  "Vous avez déjà cherché un logiciel mais rien ne collait vraiment",
+                  "Vous voulez un avis extérieur honnête, sans pression commerciale",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2.5">
                     <CheckCircleIcon className="h-4 w-4 text-[#151769] flex-shrink-0 mt-0.5" />
@@ -318,15 +318,15 @@ export default function Audit() {
           {[
             {
               title: "100% gratuit",
-              text: "Le diagnostic ne coute rien et ne vous engage a rien.",
+              text: "Le diagnostic ne coûte rien et ne vous engage à rien.",
             },
             {
-              title: "Reponse sous 24h",
-              text: "On revient vers vous rapidement pour planifier l'echange.",
+              title: "Réponse sous 24h",
+              text: "On revient vers vous rapidement pour planifier l'échange.",
             },
             {
               title: "Sans jargon",
-              text: "On vous parle clairement, comme a un humain, pas a un technicien.",
+              text: "On vous parle clairement, comme à un humain, pas à un technicien.",
             },
           ].map((item) => (
             <div key={item.title} className="bg-gray-50 border border-gray-200 rounded-2xl p-6 text-center">

@@ -88,7 +88,7 @@ export default function App() {
             </div>
 
             <div className="bg-white border border-gray-200 rounded-3xl p-8 md:p-10 h-full">
-              <p className="text-[#151769] font-semibold uppercase tracking-widest text-sm mb-3">A éviter</p>
+              <p className="text-[#151769] font-semibold uppercase tracking-widest text-sm mb-3">À éviter</p>
               <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Ce n'est probablement pas pour vous si…
               </h3>

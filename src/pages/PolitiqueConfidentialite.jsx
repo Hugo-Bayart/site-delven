@@ -59,7 +59,7 @@ const sections = [
   {
     title: "7. Sécurité des données",
     content: [
-      "Nous mettons en oeuvre les mesures techniques et organisationnelles appropriées pour protéger vos données contre tout accès non autorisé, perte, destruction ou divulgation.",
+      "Nous mettons en œuvre les mesures techniques et organisationnelles appropriées pour protéger vos données contre tout accès non autorisé, perte, destruction ou divulgation.",
       "Le site est hébergé chez OVH SAS (2 rue Kellermann, 59100 Roubaix, France), certifié ISO 27001.",
     ],
   },

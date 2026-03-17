@@ -15,29 +15,29 @@ const steps = [
     num: "01",
     icon: DocumentMagnifyingGlassIcon,
     title: "Diagnostic",
-    desc: "On echange sur votre fonctionnement actuel. On identifie les points de friction, les taches repetitives, les donnees mal centralisees. Vous repartez avec une vision claire de ce qui peut etre ameliore.",
-    tag: "Duree : 2 a 3 echanges, environ 1 semaine. Cout : gratuit, sans engagement.",
+    desc: "On échange sur votre fonctionnement actuel. On identifie les points de friction, les tâches répétitives, les données mal centralisées. Vous repartez avec une vision claire de ce qui peut être amélioré.",
+    tag: "Durée : 2 à 3 échanges, environ 1 semaine. Coût : gratuit, sans engagement.",
   },
   {
     num: "02",
     icon: LightBulbIcon,
     title: "Conception",
-    desc: "On definit ensemble le logiciel ideal. Quelles fonctionnalites, quels ecrans, quels acces pour qui. On vous presente une maquette pour valider avant de coder quoi que ce soit.",
-    tag: "Duree : 1 a 2 semaines selon la complexite.",
+    desc: "On définit ensemble le logiciel idéal. Quelles fonctionnalités, quels écrans, quels accès pour qui. On vous présente une maquette pour valider avant de coder quoi que ce soit.",
+    tag: "Durée : 1 à 2 semaines selon la complexité.",
   },
   {
     num: "03",
     icon: CodeBracketIcon,
-    title: "Developpement",
-    desc: "On construit le logiciel. Vous avez acces a des versions intermediaires pour tester et ajuster en cours de route. Pas d'effet tunnel.",
-    tag: "Duree : variable selon le projet, generalement 4 a 12 semaines.",
+    title: "Développement",
+    desc: "On construit le logiciel. Vous avez accès à des versions intermédiaires pour tester et ajuster en cours de route. Pas d'effet tunnel.",
+    tag: "Durée : variable selon le projet, généralement 4 à 12 semaines.",
   },
   {
     num: "04",
     icon: RocketLaunchIcon,
-    title: "Deploiement",
-    desc: "On installe, on forme vos equipes, on s'assure que tout roule. Et on reste disponibles pour les ajustements post-lancement.",
-    tag: "Duree : 1 a 2 semaines.",
+    title: "Déploiement",
+    desc: "On installe, on forme vos équipes, on s'assure que tout roule. Et on reste disponibles pour les ajustements post-lancement.",
+    tag: "Durée : 1 à 2 semaines.",
   },
 ];
 
@@ -66,7 +66,7 @@ export default function Methode() {
         <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
           <h1 className="text-4xl md:text-5xl font-bold mb-5 text-white">Comment on travaille ensemble</h1>
           <p className="text-lg text-white/80 max-w-2xl mx-auto">
-            Un processus simple en 4 etapes. Vous savez ou vous en etes a chaque moment.
+            Un processus en 4 étapes. Vous savez où vous en êtes à chaque moment.
           </p>
         </div>
       </section>
@@ -74,8 +74,8 @@ export default function Methode() {
       <section className="py-20 px-8 md:px-16 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-[#151769] font-semibold uppercase tracking-widest text-sm mb-3">Les 4 etapes</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Comment ca se passe</h2>
+            <p className="text-[#151769] font-semibold uppercase tracking-widest text-sm mb-3">Les 4 étapes</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Comment ça se passe</h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -103,13 +103,13 @@ export default function Methode() {
 
       <section className="py-16 px-8 md:px-16 bg-gray-100">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">A la fin, vous avez :</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">À la fin, vous avez :</h2>
           <div className="max-w-2xl mx-auto text-left">
             <ul className="space-y-3 text-gray-700 text-[16px]">
-              <li>Un logiciel unique, adapte a votre entreprise</li>
-              <li>Une equipe formee et autonome</li>
+              <li>Un logiciel unique, adapté à votre entreprise</li>
+              <li>Une équipe formée et autonome</li>
               <li>Un interlocuteur disponible pour la suite</li>
-              <li>Un outil qui peut evoluer avec vous</li>
+              <li>Un outil qui peut évoluer avec vous</li>
             </ul>
           </div>
         </div>
@@ -117,17 +117,17 @@ export default function Methode() {
 
       <section className="py-16 px-8 md:px-16 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Maintenance et evolutions</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Maintenance et évolutions</h2>
           <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Votre entreprise change, votre logiciel aussi. On propose un accompagnement continu pour corriger,
-            ameliorer, ajouter des fonctionnalites quand vous en avez besoin.
+            améliorer, ajouter des fonctionnalités quand vous en avez besoin.
           </p>
         </div>
       </section>
 
       <section className="py-16 px-8 md:px-16 bg-gray-100">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Ca vous parle ?</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Ça vous parle ?</h2>
           <Link
             to="/audit"
             className="inline-flex items-center gap-2 px-8 py-4 bg-[#151769] text-white rounded-xl font-bold text-lg hover:bg-[#0f1150] transition-colors shadow-lg"

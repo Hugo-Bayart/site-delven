@@ -4,52 +4,52 @@ import { Helmet } from "react-helmet-async";
 
 const sections = [
   {
-    title: "Editeur du site",
+    title: "Éditeur du site",
     content: [
       "Raison sociale : Delven",
       "Forme juridique : Auto-entrepreneur (micro-entreprise)",
       "SIRET : 947 941 779",
-      "Adresse : 4a chemin de la riviere",
+      "Adresse : 4a chemin de la rivière",
       "Email : contact@delven.fr",
-      "Telephone : +33 07 89 51 15 01",
+      "Téléphone : +33 07 89 51 15 01",
       "Directeur de la publication : Hugo Bayart",
     ],
   },
   {
-    title: "Hebergeur",
+    title: "Hébergeur",
     content: [
       "OVH SAS",
       "2 rue Kellermann",
       "59100 Roubaix - France",
-      "Telephone : 1007 (depuis la France) ou +33 9 72 10 10 07",
+      "Téléphone : 1007 (depuis la France) ou +33 9 72 10 10 07",
       "Site : www.ovhcloud.com",
     ],
   },
   {
-    title: "Propriete intellectuelle",
+    title: "Propriété intellectuelle",
     content: [
-      "L'ensemble du contenu de ce site (textes, images, graphismes, logo, icones, sons, logiciels...) est la propriete exclusive de Delven, a l'exception des marques, logos ou contenus appartenant a d'autres societes partenaires ou auteurs.",
-      "Toute reproduction, distribution, modification, adaptation, retransmission ou publication, meme partielle, de ces differents elements est strictement interdite sans l'accord expres par ecrit de Delven.",
+      "L'ensemble du contenu de ce site (textes, images, graphismes, logo, icônes, sons, logiciels...) est la propriété exclusive de Delven, à l'exception des marques, logos ou contenus appartenant à d'autres sociétés partenaires ou auteurs.",
+      "Toute reproduction, distribution, modification, adaptation, retransmission ou publication, même partielle, de ces différents éléments est strictement interdite sans l'accord exprès par écrit de Delven.",
     ],
   },
   {
     title: "Liens hypertextes",
     content: [
-      "Le site delven.fr peut contenir des liens vers d'autres sites internet. Delven n'exerce aucun controle sur ces sites et decline toute responsabilite quant a leur contenu.",
-      "La mise en place de liens hypertextes pointant vers le site delven.fr est soumise a l'accord prealable de Delven.",
+      "Le site delven.fr peut contenir des liens vers d'autres sites internet. Delven n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu.",
+      "La mise en place de liens hypertextes pointant vers le site delven.fr est soumise à l'accord préalable de Delven.",
     ],
   },
   {
-    title: "Limitation de responsabilite",
+    title: "Limitation de responsabilité",
     content: [
-      "Delven s'efforce d'assurer l'exactitude et la mise a jour des informations diffusees sur ce site, dont elle se reserve le droit de corriger le contenu a tout moment et sans preavis.",
-      "Delven ne peut garantir l'exactitude ou l'exhaustivite des informations mises a disposition et ne saurait etre tenu responsable des erreurs ou omissions.",
+      "Delven s'efforce d'assurer l'exactitude et la mise à jour des informations diffusées sur ce site, dont elle se réserve le droit de corriger le contenu à tout moment et sans préavis.",
+      "Delven ne peut garantir l'exactitude ou l'exhaustivité des informations mises à disposition et ne saurait être tenu responsable des erreurs ou omissions.",
     ],
   },
   {
     title: "Droit applicable",
     content: [
-      "Les presentes mentions legales sont soumises au droit francais. En cas de litige, et a defaut de resolution amiable, les tribunaux francais seront seuls competents.",
+      "Les présentes mentions légales sont soumises au droit français. En cas de litige, et à défaut de résolution amiable, les tribunaux français seront seuls compétents.",
     ],
   },
 ];
@@ -71,8 +71,8 @@ export default function MentionsLegales() {
           }}
         />
         <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">Mentions legales</h1>
-          <p className="text-white/60 text-sm">Derniere mise a jour : mars 2026</p>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">Mentions légales</h1>
+          <p className="text-white/60 text-sm">Dernière mise à jour : mars 2026</p>
         </div>
       </section>
 
