@@ -55,8 +55,13 @@ export default function Contact() {
   return (
     <Layout>
       <Helmet>
-        <title>Contact | Delven</title>
-        <meta name="description" content="Une question ? Un projet ? Contactez Delven. Réponse sous 24h ouvrées." />
+        <title>Contactez Delven | Logiciel sur mesure pour PME</title>
+        <meta name="description" content="Une question ou un projet de logiciel sur mesure ? Contactez Delven par formulaire, email ou téléphone. Réponse sous 24h ouvrées." />
+        <link rel="canonical" href="https://www.delven.fr/contact" />
+        <meta property="og:title" content="Contactez Delven | Logiciel sur mesure pour PME" />
+        <meta property="og:description" content="Contactez Delven pour votre projet de logiciel sur mesure PME. Réponse sous 24h ouvrées." />
+        <meta property="og:url" content="https://www.delven.fr/contact" />
+        <meta property="og:type" content="website" />
       </Helmet>
 
       <section className="bg-[#151769] relative overflow-hidden py-20 px-8 md:px-16">

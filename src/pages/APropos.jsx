@@ -30,8 +30,13 @@ export default function APropos() {
         <title>À propos de Delven | Logiciels sur mesure pour PME</title>
         <meta
           name="description"
-          content="Delven conçoit des logiciels internes sur mesure pour les PME qui veulent sortir d'Excel et des outils éparpillés. Basé à Toulouse, actif partout en francophonie."
+          content="Découvrez qui est Delven, notre approche et nos valeurs. Nous concevons des logiciels internes sur mesure pour les PME qui veulent sortir d’Excel et des outils éparpillés."
         />
+        <link rel="canonical" href="https://www.delven.fr/a-propos" />
+        <meta property="og:title" content="À propos de Delven | Logiciels sur mesure pour PME" />
+        <meta property="og:description" content="Découvrez l’approche de Delven : logiciels internes sur mesure pour les PME, sans la lourdeur d’un ERP." />
+        <meta property="og:url" content="https://www.delven.fr/a-propos" />
+        <meta property="og:type" content="website" />
       </Helmet>
 
       <section className="bg-[#151769] py-24 px-8 md:px-16 relative overflow-hidden">

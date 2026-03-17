@@ -15,6 +15,9 @@ export default function Footer() {
                   src="/logo-delven-outline.png"
                   alt="Delven"
                   className="h-8 object-contain brightness-0 invert"
+                  width="120"
+                  height="32"
+                  loading="lazy"
                 />
               </div>
             </Link>

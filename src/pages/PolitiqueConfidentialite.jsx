@@ -85,7 +85,9 @@ export default function PolitiqueConfidentialite() {
     <Layout>
       <Helmet>
         <title>Politique de confidentialité | Delven</title>
-        <meta name="description" content="Protection des données personnelles et conformité RGPD du site Delven." />
+        <meta name="description" content="Politique de confidentialité et protection des données personnelles du site Delven, conformément au RGPD (Règlement UE 2016/679)." />
+        <link rel="canonical" href="https://www.delven.fr/politique-confidentialite" />
+        <meta name="robots" content="noindex, follow" />
       </Helmet>
 
       {/* Hero */}

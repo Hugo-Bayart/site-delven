@@ -1,9 +1,32 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import sitemap from 'vite-plugin-sitemap'
+
+const routes = [
+  '/',
+  '/a-propos',
+  '/methode',
+  '/cas-client/ctic-congo',
+  '/tarifs',
+  '/contact',
+  '/mentions-legales',
+  '/politique-confidentialite',
+  '/questions-frequentes',
+  '/audit',
+]
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    sitemap({
+      hostname: 'https://www.delven.fr',
+      dynamicRoutes: routes,
+      changefreq: 'weekly',
+      priority: 0.8,
+      lastmod: new Date().toISOString().split('T')[0],
+    }),
+  ],
   server: {
     proxy: {
       '/api': {

@@ -15,11 +15,16 @@ export default function App() {
   return (
     <Layout>
       <Helmet>
-        <title>Delven — Logiciels sur mesure pour PME | Alternative aux ERP</title>
+        <title>Logiciel sur mesure pour PME | Delven</title>
         <meta
           name="description"
-          content="Vous gérez encore votre entreprise sur Excel ? Delven conçoit des logiciels internes sur mesure pour les PME. Plus simple qu'un ERP, 100% adapté à vous."
+          content="Delven conçoit des logiciels métier sur mesure pour les PME françaises. Une alternative simple aux ERP complexes, adaptée à votre activité réelle."
         />
+        <link rel="canonical" href="https://www.delven.fr/" />
+        <meta property="og:title" content="Logiciel sur mesure pour PME | Delven" />
+        <meta property="og:description" content="Delven conçoit des logiciels métier sur mesure pour les PME françaises. Une alternative simple aux ERP complexes, adaptée à votre activité réelle." />
+        <meta property="og:url" content="https://www.delven.fr/" />
+        <meta property="og:type" content="website" />
       </Helmet>
 
       <section className="bg-[#151769] relative overflow-hidden py-20 px-8 md:px-16" aria-label="Présentation Delven">

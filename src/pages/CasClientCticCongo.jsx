@@ -15,11 +15,25 @@ export default function CasClientCticCongo() {
   return (
     <Layout>
       <Helmet>
-        <title>Cas client CTIC Congo — Métallurgie, 70 employés | Delven</title>
+        <title>Cas client CTIC Congo — −70 % de temps de saisie | Delven</title>
         <meta
           name="description"
-          content="Comment CTIC Congo a centralisé sa gestion et réduit de 70% son temps de saisie grâce à un logiciel sur mesure développé par Delven."
+          content="Comment CTIC Congo (métallurgie, 70 employés) a centralisé sa gestion et réduit de 70 % son temps de saisie grâce à un logiciel sur mesure développé par Delven."
         />
+        <link rel="canonical" href="https://www.delven.fr/cas-client/ctic-congo" />
+        <meta property="og:title" content="Cas client CTIC Congo — −70 % de temps de saisie | Delven" />
+        <meta property="og:description" content="70 employés, secteur métallurgie : −70 % de saisie manuelle, zéro perte de données grâce à un logiciel sur mesure Delven." />
+        <meta property="og:url" content="https://www.delven.fr/cas-client/ctic-congo" />
+        <meta property="og:type" content="website" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Logiciel de gestion interne sur mesure pour CTIC Congo",
+          "provider": { "@type": "Organization", "name": "Delven", "url": "https://www.delven.fr" },
+          "areaServed": ["FR", "CG"],
+          "description": "Développement d’un logiciel de gestion interne pour l’entreprise métallurgique CTIC Congo, centralisant projets, équipes et pipeline commercial.",
+          "url": "https://www.delven.fr/cas-client/ctic-congo"
+        })}</script>
       </Helmet>
 
       <section className="py-20 bg-[#151769] relative overflow-hidden" aria-labelledby="cas-titre">
@@ -41,6 +55,9 @@ export default function CasClientCticCongo() {
               src="/logoctic.jpg"
               alt="Logo CTIC Congo"
               className="h-16 object-contain bg-white rounded-2xl px-4 py-2 shadow-xl mx-auto mb-6"
+              width="160"
+              height="64"
+              loading="lazy"
             />
             <h1 id="cas-titre" className="text-4xl md:text-5xl font-bold mb-5 text-white">
               CTIC Congo — Métallurgie, 70 employés

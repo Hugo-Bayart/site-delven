@@ -59,7 +59,9 @@ export default function MentionsLegales() {
     <Layout>
       <Helmet>
         <title>Mentions légales | Delven</title>
-        <meta name="description" content="Mentions légales du site Delven. Éditeur, hébergeur, propriété intellectuelle." />
+        <meta name="description" content="Mentions légales du site Delven : éditeur, hébergeur, propriété intellectuelle et conditions d’utilisation." />
+        <link rel="canonical" href="https://www.delven.fr/mentions-legales" />
+        <meta name="robots" content="noindex, follow" />
       </Helmet>
 
       <section className="bg-[#151769] py-16 px-8 md:px-16 relative overflow-hidden">

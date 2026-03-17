@@ -77,11 +77,16 @@ export default function Audit() {
   return (
     <Layout>
       <Helmet>
-        <title>Diagnostic gratuit | Delven — Logiciels sur mesure pour PME</title>
+        <title>Diagnostic gratuit de vos processus | Delven</title>
         <meta
           name="description"
-          content="Demandez un diagnostic gratuit de vos processus. On analyse votre fonctionnement et on vous dit ce qu'un logiciel sur mesure peut vous apporter. Sans engagement."
+          content="Demandez un diagnostic gratuit de vos processus internes. En 2–3 échanges, on analyse votre fonctionnement et on vous propose un logiciel sur mesure. Sans engagement."
         />
+        <link rel="canonical" href="https://www.delven.fr/audit" />
+        <meta property="og:title" content="Diagnostic gratuit de vos processus | Delven" />
+        <meta property="og:description" content="Audit gratuit de vos processus internes. On analyse votre fonctionnement et on vous dit ce qu’un logiciel sur mesure peut vous apporter." />
+        <meta property="og:url" content="https://www.delven.fr/audit" />
+        <meta property="og:type" content="website" />
       </Helmet>
 
       <section className="bg-[#151769] py-20 px-8 md:px-16 relative overflow-hidden">

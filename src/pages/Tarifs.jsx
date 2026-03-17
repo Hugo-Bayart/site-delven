@@ -51,11 +51,16 @@ export default function Tarifs() {
   return (
     <Layout>
       <Helmet>
-        <title>Tarifs logiciel sur mesure | Delven</title>
+        <title>Tarifs logiciel sur mesure pour PME | Delven</title>
         <meta
           name="description"
-          content="Tarifs clairs pour votre projet de logiciel sur mesure. À partir de 3 000 €. Devis détaillé après diagnostic gratuit, sans engagement."
+          content="Tarifs clairs pour votre projet de logiciel sur mesure : de 3 000 € pour un outil simple à 25 000 €+ pour un projet complexe. Devis détaillé après diagnostic gratuit."
         />
+        <link rel="canonical" href="https://www.delven.fr/tarifs" />
+        <meta property="og:title" content="Tarifs logiciel sur mesure pour PME | Delven" />
+        <meta property="og:description" content="Tarifs indicatifs et transparents pour votre logiciel sur mesure. Devis précis après diagnostic gratuit, sans engagement." />
+        <meta property="og:url" content="https://www.delven.fr/tarifs" />
+        <meta property="og:type" content="website" />
       </Helmet>
 
       <section className="bg-[#151769] relative overflow-hidden py-20 px-8 md:px-16">

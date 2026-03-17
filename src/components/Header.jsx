@@ -40,6 +40,9 @@ export default function Header() {
               src="/logo-delven-outline.png"
               alt="Delven"
               className="h-20 w-auto object-contain"
+              width="160"
+              height="80"
+              fetchPriority="high"
               onError={(e) => {
                 e.currentTarget.replaceWith(
                   Object.assign(document.createElement("span"), {

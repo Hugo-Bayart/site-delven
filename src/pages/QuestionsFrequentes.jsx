@@ -122,8 +122,13 @@ export default function QuestionsFrequentes() {
         <title>Questions fréquentes | Delven</title>
         <meta
           name="description"
-          content="Tout savoir sur le diagnostic gratuit, le développement, les tarifs et le fonctionnement de Delven. Réponses claires, sans jargon."
+          content="Réponses à toutes vos questions sur le diagnostic gratuit, le développement, les tarifs et le fonctionnement de Delven. Clair, sans jargon technique."
         />
+        <link rel="canonical" href="https://www.delven.fr/questions-frequentes" />
+        <meta property="og:title" content="Questions fréquentes | Delven" />
+        <meta property="og:description" content="Tout savoir sur le diagnostic gratuit, le développement sur mesure, les tarifs et le fonctionnement de Delven." />
+        <meta property="og:url" content="https://www.delven.fr/questions-frequentes" />
+        <meta property="og:type" content="website" />
       </Helmet>
 
       {/* Hero */}

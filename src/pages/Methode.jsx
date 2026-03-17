@@ -48,8 +48,22 @@ export default function Methode() {
         <title>Notre méthode en 4 étapes | Delven</title>
         <meta
           name="description"
-          content="Diagnostic, conception, développement, déploiement. Découvrez comment on construit votre logiciel sur mesure, de A à Z, sans mauvaise surprise."
+          content="Diagnostic, conception, développement, déploiement : découvrez comment Delven construit votre logiciel sur mesure, de A à Z, sans mauvaise surprise et sans effet tunnel."
         />
+        <link rel="canonical" href="https://www.delven.fr/methode" />
+        <meta property="og:title" content="Notre méthode en 4 étapes | Delven" />
+        <meta property="og:description" content="Diagnostic, conception, développement, déploiement : comment on construit votre logiciel sur mesure en 4 étapes claires." />
+        <meta property="og:url" content="https://www.delven.fr/methode" />
+        <meta property="og:type" content="website" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Développement logiciel sur mesure pour PME",
+          "provider": { "@type": "Organization", "name": "Delven", "url": "https://www.delven.fr" },
+          "areaServed": "FR",
+          "description": "Développement d’applications métier sur mesure pour PME françaises, en alternative aux ERP généralistes.",
+          "url": "https://www.delven.fr/methode"
+        })}</script>
       </Helmet>
 
       <section className="bg-[#151769] relative overflow-hidden py-20 px-8 md:px-16">
