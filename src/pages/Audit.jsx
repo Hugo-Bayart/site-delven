@@ -22,6 +22,75 @@ const steps = [
   },
 ];
 
+const quizQuestions = [
+  {
+    name: "quizOutils",
+    label: "Combien d'outils numériques utilisez-vous au quotidien dans votre entreprise ? *",
+    options: [
+      "Moins de 3 outils",
+      "Entre 3 et 5 outils",
+      "Entre 6 et 10 outils",
+      "Plus de 10 outils",
+      "Autre",
+    ],
+  },
+  {
+    name: "quizAutomatisation",
+    label: "Automatiser les tâches répétitives fait-il partie de vos priorités actuelles ? *",
+    options: [
+      "Non, pas du tout",
+      "C'est une réflexion en cours",
+      "Oui, c'est une priorité",
+      "Nous avons déjà commencé",
+      "Autre",
+    ],
+  },
+  {
+    name: "quizProcess",
+    label: "Vos processus sont-ils clairement documentés et standardisés ? *",
+    options: [
+      "Non, rien n'est documenté",
+      "Partiellement documentés",
+      "La plupart sont documentés",
+      "Tous nos processus sont standardisés",
+      "Autre",
+    ],
+  },
+  {
+    name: "quizSuiviDonnees",
+    label: "Comment suivez-vous vos données (chiffre d'affaires, production, opérations…) ? *",
+    options: [
+      "Principalement sur papier ou Excel basique",
+      "Excel avec quelques automatisations",
+      "Logiciels dédiés mais peu intégrés",
+      "Système intégré avec tableaux de bord en temps réel",
+      "Autre",
+    ],
+  },
+  {
+    name: "quizTempsRepetitif",
+    label: "Quelle part du temps de vos équipes est consacrée à des tâches répétitives à faible valeur ajoutée ? *",
+    options: [
+      "Moins de 10%",
+      "Entre 10% et 25%",
+      "Entre 25% et 50%",
+      "Plus de 50%",
+      "Autre",
+    ],
+  },
+  {
+    name: "quizAisanceDigitale",
+    label: "Votre équipe est-elle à l'aise avec les outils digitaux et les nouveaux logiciels métier ? *",
+    options: [
+      "Pas du tout",
+      "Quelques personnes en auto-formation",
+      "Formation interne organisée",
+      "Formation complète et utilisation quotidienne",
+      "Autre",
+    ],
+  },
+];
+
 export default function Audit() {
   const [sent, setSent] = useState(false);
   const [form, setForm] = useState({
@@ -31,6 +100,12 @@ export default function Audit() {
     entreprise: "",
     secteur: "",
     salaries: "",
+    quizOutils: "",
+    quizAutomatisation: "",
+    quizProcess: "",
+    quizSuiviDonnees: "",
+    quizTempsRepetitif: "",
+    quizAisanceDigitale: "",
     probleme: "",
     budget: "",
   });
@@ -64,6 +139,12 @@ export default function Audit() {
         entreprise: "",
         secteur: "",
         salaries: "",
+        quizOutils: "",
+        quizAutomatisation: "",
+        quizProcess: "",
+        quizSuiviDonnees: "",
+        quizTempsRepetitif: "",
+        quizAisanceDigitale: "",
         probleme: "",
         budget: "",
       });
@@ -233,7 +314,31 @@ export default function Audit() {
                       <option>31-50</option>
                       <option>51-100</option>
                       <option>100+</option>
+                      <option>Autre</option>
                     </select>
+                  </div>
+                </div>
+
+                <div className="pt-3">
+                  <h3 className="text-sm font-bold text-gray-900 mb-4">Questions complémentaires</h3>
+                  <div className="space-y-4">
+                    {quizQuestions.map((question) => (
+                      <div key={question.name}>
+                        <label className="block text-xs font-semibold text-gray-700 mb-1.5">{question.label}</label>
+                        <select
+                          name={question.name}
+                          value={form[question.name]}
+                          onChange={handleChange}
+                          required
+                          className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#151769] focus:border-transparent"
+                        >
+                          <option value="">Sélectionner</option>
+                          {question.options.map((option) => (
+                            <option key={option}>{option}</option>
+                          ))}
+                        </select>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
@@ -263,6 +368,7 @@ export default function Audit() {
                     <option>5 000 - 15 000 EUR</option>
                     <option>15 000 - 30 000 EUR</option>
                     <option>Plus de 30 000 EUR</option>
+                    <option>Autre</option>
                   </select>
                 </div>
 

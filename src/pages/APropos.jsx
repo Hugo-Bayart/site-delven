@@ -77,7 +77,7 @@ export default function APropos() {
               de PME restent coincées entre le bricolage et des solutions surdimensionnées.
             </p>
             <p>
-              Delven est ne pour proposer une troisieme voie : un logiciel taille exactement pour votre fonctionnement,
+              Delven est né pour proposer une troisième voie : un logiciel taillé exactement pour votre fonctionnement,
               sans superflu.
             </p>
           </div>
@@ -119,23 +119,6 @@ export default function APropos() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 px-8 md:px-16 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-[#151769] font-semibold uppercase tracking-widest text-sm mb-3">Qui est derrière</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Qui je suis</h2>
-
-          <div className="space-y-5 text-gray-700 text-[17px] leading-relaxed">
-            <p>
-              Je suis Hugo, fondateur de Delven, basé à Toulouse. J'ai créé cette entreprise parce que je crois que
-              les PME méritent des outils à leur taille, pas des solutions pensées pour d'autres qu'on leur impose.
-            </p>
-            <p className="font-medium text-gray-900">
-              Mon objectif : vous faire gagner du temps, de la clarté, et de la sérénité au quotidien.
-            </p>
           </div>
         </div>
       </section>

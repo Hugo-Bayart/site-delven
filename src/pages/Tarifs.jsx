@@ -2,23 +2,57 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Layout from "../components/Layout";
-import { ArrowRightIcon, CheckCircleIcon } from "@heroicons/react/24/outline";
+import { ArrowRightIcon, CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/outline";
 
-const ranges = [
+const pricingPlans = [
   {
-    title: "Projet simple",
-    desc: "Logiciel interne avec 2-3 fonctionnalités clés\nPME de 10-20 personnes",
-    price: "À partir de 3 000 EUR",
+    label: "Formule 01",
+    name: "Starter",
+    description: "Un premier outil ciblé pour automatiser un processus clé, même avec un budget limité.",
+    price: "Dès 500 €",
+    range: "500 – 3 000 € · Selon périmètre fonctionnel",
+    tag: "Idéal pour démarrer",
+    included: [
+      "1 fonctionnalité sur mesure",
+      "Interface simple et intuitive",
+      "Livraison rapide (2–4 semaines)",
+      "1 mois de support inclus",
+    ],
+    excluded: ["Intégrations tierces", "Modules additionnels"],
   },
   {
-    title: "Projet standard",
-    desc: "Logiciel complet, plusieurs modules, 20-50 utilisateurs",
-    price: "Entre 8 000 EUR et 20 000 EUR",
+    label: "Formule 02",
+    name: "Métier",
+    description: "Une solution complète, pensée pour votre secteur et vos flux de travail réels.",
+    price: "À partir de 3 000 €",
+    range: "3 000 – 15 000 € · Selon complexité et intégrations",
+    badge: "Le plus choisi",
+    featured: true,
+    included: [
+      "Jusqu'à 4 modules métier",
+      "Interface web + mobile",
+      "Intégrations (ERP, compta…)",
+      "Tableau de bord et exports",
+      "Formation équipe complète",
+      "6 mois de support inclus",
+    ],
+    excluded: [],
   },
   {
-    title: "Projet avancé",
-    desc: "Outil complexe, nombreuses intégrations, +50 utilisateurs",
-    price: "Sur devis, à partir de 25 000 EUR",
+    label: "Formule 03",
+    name: "Entreprise",
+    description: "Un écosystème logiciel sur mesure, évolutif et connecté à vos systèmes existants.",
+    price: "À partir de 15 000 €",
+    range: "15 000 – 60 000 € · Projet complexe multi-modules",
+    included: [
+      "Modules illimités",
+      "Architecture sur mesure",
+      "Intégrations multi-systèmes",
+      "Droits et rôles avancés",
+      "Chef de projet dédié",
+      "12 mois de support inclus",
+    ],
+    excluded: [],
   },
 ];
 
@@ -89,7 +123,7 @@ export default function Tarifs() {
 
           <div className="space-y-5 text-gray-700 text-[16px] leading-relaxed max-w-4xl mx-auto">
             <p>
-              Chaque entreprise est différente. Un logiciel pour 15 personnes n'a pas le même coût qu'un outil pour 80 utilisateurs avec 10 modules.
+              Chaque projet est unique : vous investissez uniquement dans ce qui crée de la valeur pour votre entreprise, qu'il s'agisse d'un besoin ciblé ou d'une solution plus complète.
             </p>
             <p>
               C'est pourquoi on ne propose pas de tarif fixe affiché. Le prix dépend de :
@@ -109,22 +143,116 @@ export default function Tarifs() {
 
       <section className="py-16 px-8 md:px-16 bg-gray-100">
         <div className="max-w-6xl mx-auto">
-          <p className="text-[#151769] font-semibold uppercase tracking-widest text-sm mb-3 text-center">Fourchettes indicatives</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10 text-center">Ordres de grandeur</h2>
+          <p className="text-[#151769] font-semibold uppercase tracking-widest text-sm mb-3 text-center">Tarification</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">Chaque projet est unique. Votre devis aussi.</h2>
+          <p className="text-center text-gray-600 max-w-3xl mx-auto mb-10">
+            Des fourchettes transparentes pour chaque niveau de besoin. Devis personnalisé sous 48h.
+          </p>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {ranges.map((range) => (
-              <article key={range.title} className="bg-white border border-gray-200 rounded-3xl p-8 text-center">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{range.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line mb-6">{range.desc}</p>
-                <p className="text-lg font-bold text-[#151769]">{range.price}</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+            {pricingPlans.map((plan) => (
+              <article
+                key={plan.name}
+                className={[
+                  "relative rounded-3xl p-7 border transition-all h-full flex flex-col",
+                  plan.featured
+                    ? "bg-[#151769] text-white border-[#151769] md:scale-[1.03] md:-translate-y-1 shadow-2xl"
+                    : "bg-white border-gray-200 text-gray-900",
+                ].join(" ")}
+              >
+                {plan.badge ? (
+                  <span className="absolute -top-3 right-5 px-3 py-1 rounded-full text-xs font-semibold bg-[#fde68a] text-[#151769] shadow-md">
+                    {plan.badge}
+                  </span>
+                ) : null}
+
+                <p className={[
+                  "text-xs font-semibold uppercase tracking-widest mb-2",
+                  plan.featured ? "text-white/70" : "text-[#151769]",
+                ].join(" ")}>
+                  {plan.label}
+                </p>
+                <h3 className="text-2xl font-bold mb-3">{plan.name}</h3>
+                <p className={[
+                  "text-sm leading-relaxed mb-5",
+                  plan.featured ? "text-white/80" : "text-gray-600",
+                ].join(" ")}>
+                  {plan.description}
+                </p>
+
+                <p className={[
+                  "text-2xl font-extrabold mb-1",
+                  plan.featured ? "text-[#fde68a]" : "text-[#151769]",
+                ].join(" ")}>
+                  {plan.price}
+                </p>
+                <p className={[
+                  "text-xs mb-5",
+                  plan.featured ? "text-white/70" : "text-gray-500",
+                ].join(" ")}>
+                  {plan.range}
+                </p>
+
+                {plan.tag ? (
+                  <span className="inline-flex self-start px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700 mb-5">
+                    {plan.tag}
+                  </span>
+                ) : null}
+
+                <ul className="space-y-2 mb-5">
+                  {plan.included.map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <CheckCircleIcon className={[
+                        "h-5 w-5 mt-0.5 flex-shrink-0",
+                        plan.featured ? "text-[#fde68a]" : "text-[#151769]",
+                      ].join(" ")} />
+                      <span className={plan.featured ? "text-white/90 text-sm" : "text-gray-700 text-sm"}>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {plan.excluded.length > 0 ? (
+                  <ul className="space-y-2 mb-6">
+                    {plan.excluded.map((item) => (
+                      <li key={item} className="flex items-start gap-2">
+                        <XCircleIcon className="h-5 w-5 mt-0.5 flex-shrink-0 text-gray-300" />
+                        <span className="text-gray-400 text-sm">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
               </article>
             ))}
           </div>
 
-          <p className="text-center text-gray-600 mt-8 max-w-3xl mx-auto">
-            Ces fourchettes sont indicatives. Le diagnostic gratuit permet d'affiner précisément selon votre besoin.
+          <p className="text-center text-gray-500 text-sm mt-8 max-w-3xl mx-auto">
+            Ces fourchettes sont indicatives. Chaque devis est établi après un appel de découverte gratuit de 30 min.
+            Pas de mauvaise surprise : le prix final est fixé avant le démarrage du projet.
           </p>
+
+          <div className="mt-12 max-w-4xl mx-auto">
+            <div className="bg-[#151769] rounded-3xl p-12 md:p-16 text-center text-white relative overflow-hidden">
+              <div
+                className="absolute inset-0 opacity-25 pointer-events-none"
+                style={{
+                  backgroundImage: `
+                    radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 80%, rgba(253,230,138,0.12) 0%, transparent 50%)
+                  `,
+                }}
+              />
+              <div className="relative z-10">
+                <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">Vous voulez un chiffrage précis ?</h2>
+                <Link
+                  to="/audit"
+                  className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-[#fef3c7] text-[#151769] rounded-xl font-bold text-lg hover:bg-[#fde68a] transition-colors shadow-lg"
+                >
+                  Demander un diagnostic gratuit
+                  <ArrowRightIcon className="h-5 w-5" />
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -163,7 +291,7 @@ export default function Tarifs() {
             <li>Mises à jour techniques</li>
             <li>Évolutions fonctionnelles à la demande</li>
           </ul>
-          <p className="font-semibold text-[#151769]">Tarif maintenance : à partir de 150 EUR/mois selon la taille du projet.</p>
+          <p className="font-semibold text-[#151769]">Tarif maintenance : à partir de 50 € / mois selon la taille du projet.</p>
         </div>
       </section>
 
@@ -197,31 +325,6 @@ export default function Tarifs() {
         </div>
       </section>
 
-      <section className="py-16 px-8 md:px-16 bg-gray-100">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-[#151769] rounded-3xl p-12 md:p-16 text-center text-white relative overflow-hidden">
-            <div
-              className="absolute inset-0 opacity-25 pointer-events-none"
-              style={{
-                backgroundImage: `
-                  radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                  radial-gradient(circle at 80% 80%, rgba(253,230,138,0.12) 0%, transparent 50%)
-                `,
-              }}
-            />
-            <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">Vous voulez un chiffrage précis ?</h2>
-              <Link
-                to="/audit"
-                className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-[#fef3c7] text-[#151769] rounded-xl font-bold text-lg hover:bg-[#fde68a] transition-colors shadow-lg"
-              >
-                Demander un diagnostic gratuit
-                <ArrowRightIcon className="h-5 w-5" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
     </Layout>
   );
 }

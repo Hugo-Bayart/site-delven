@@ -1,0 +1,315 @@
+.section {
+  background: #0d0d12;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.sectionInlineBare {
+  background: transparent;
+  padding: 0;
+  overflow: visible;
+}
+
+.sectionInline {
+  background: #ffffff;
+  padding: 0;
+  overflow: visible;
+}
+
+.sectionGlow {
+  position: absolute;
+  inset: auto 0 -120px 0;
+  height: 280px;
+  pointer-events: none;
+  background: radial-gradient(60% 70% at 50% 40%, rgba(100, 200, 255, 0.08) 0%, rgba(100, 200, 255, 0.02) 45%, rgba(100, 200, 255, 0) 100%);
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: min(1180px, 92vw);
+  margin: 0 auto;
+}
+
+.containerInline {
+  width: 100%;
+}
+
+.viewportInlineSingle {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 900 / 462;
+  perspective: none;
+}
+
+.inlineSingleImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  border-radius: 14px;
+}
+
+.swipeFromRight {
+  animation: swipeFromRight 520ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.swipeFromLeft {
+  animation: swipeFromLeft 520ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes swipeFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(38px);
+    filter: blur(2px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes swipeFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-38px);
+    filter: blur(2px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.heading h2 {
+  color: #ffffff;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 10px;
+}
+
+.headingInlineTitle {
+  color: #111827 !important;
+  font-size: clamp(24px, 3vw, 32px) !important;
+}
+
+.subtitle {
+  color: #9ca3af;
+  font-size: 15px;
+  margin: 0;
+}
+
+.sectionInline .subtitle {
+  color: #6b7280;
+}
+
+.carouselRegion {
+  position: relative;
+}
+
+.viewport {
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 320px;
+  height: 300px;
+  border-radius: 0;
+  overflow: hidden;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+  cursor: pointer;
+  transform-origin: center center;
+  transition:
+    transform 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    filter 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cardActive {
+  cursor: default;
+  box-shadow: none;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 12px 14px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.04));
+}
+
+.cardOverlay span {
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.navButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 200ms ease;
+}
+
+.navButton:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.sectionInline .navButton {
+  border: 1px solid rgba(17, 24, 39, 0.15);
+  background: rgba(17, 24, 39, 0.04);
+  color: #111827;
+}
+
+.sectionInline .navButton:hover {
+  background: rgba(17, 24, 39, 0.1);
+}
+
+.navRow {
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.info {
+  margin-top: 22px;
+  text-align: center;
+  min-height: 58px;
+}
+
+.kicker {
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 10px;
+  margin: 0 0 6px;
+}
+
+.activeLabel {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0 0 4px;
+  opacity: 1;
+  transition: opacity 320ms ease;
+}
+
+.activeLabelInline {
+  color: #111827;
+}
+
+.activeSub {
+  color: #666;
+  font-size: 12px;
+  margin: 0;
+  opacity: 1;
+  transition: opacity 320ms ease;
+}
+
+.sectionInline .kicker {
+  color: #6b7280;
+}
+
+.sectionInline .dot {
+  background: rgba(17, 24, 39, 0.2);
+}
+
+.sectionInline .dotActive {
+  background: #111827;
+}
+
+.dots {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 240ms ease;
+}
+
+.dotActive {
+  width: 20px;
+  background: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .viewport {
+    height: 300px;
+    perspective: none;
+  }
+
+  .card {
+    width: min(88vw, 340px);
+    height: 250px;
+  }
+
+  .track {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navRow {
+    margin-top: 10px;
+  }
+
+  .viewportInlineSingle {
+    aspect-ratio: 900 / 462;
+  }
+}

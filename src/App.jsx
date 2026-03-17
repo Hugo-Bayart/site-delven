@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Layout from "./components/Layout";
+import MockupCarousel from "./components/MockupCarousel";
 import { ArrowRightIcon, XCircleIcon } from "@heroicons/react/24/outline";
 
 const painPoints = [
@@ -59,24 +60,17 @@ export default function App() {
         </div>
       </section>
 
-      <section className="py-16 px-8 md:px-16 bg-gray-100" aria-labelledby="pour-qui-titre">
+      <section className="py-16 px-8 md:px-16 bg-gray-100" aria-label="Pour qui">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 id="pour-qui-titre" className="text-3xl md:text-4xl font-bold text-gray-900">
-              Pour qui ?
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 md:gap-10 items-stretch">
-            <div className="bg-white border border-gray-200 rounded-3xl p-8 md:p-10 h-full">
-              <p className="text-[#151769] font-semibold uppercase tracking-widest text-sm mb-3">Pour qui</p>
+          <div className="grid md:grid-cols-12 gap-8 md:gap-10 items-stretch">
+            <div className="bg-white border border-gray-200 rounded-3xl p-8 md:p-10 h-full md:col-span-5">
+              <p className="text-[#151769] font-semibold uppercase tracking-widest text-sm mb-3">Pour qui ?</p>
               <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Ce logiciel est fait pour vous si…
               </h3>
 
               <div className="space-y-4">
                 {[
-                  "Vous avez entre 20 et 100 employés",
                   "Vous gérez encore des process en Excel ou sur papier",
                   "Vous avez testé un ERP - trop lourd, trop cher, ou trop générique",
                   "Votre équipe a créé des \"bricolages\" pour faire fonctionner vos outils ensemble",
@@ -92,25 +86,15 @@ export default function App() {
               </div>
             </div>
 
-            <div className="bg-white border border-gray-200 rounded-3xl p-8 md:p-10 h-full">
-              <p className="text-[#151769] font-semibold uppercase tracking-widest text-sm mb-3">À éviter</p>
+            <div className="h-full min-h-[540px] md:col-span-7 flex flex-col justify-start">
+              <p className="text-[#151769] font-semibold uppercase tracking-widest text-sm mb-3">
+                Exemples de logiciels
+              </p>
               <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Ce n'est probablement pas pour vous si…
+                Aperçu d'interfaces développées sur mesure
               </h3>
-
-              <div className="space-y-4">
-                {[
-                  "Vous cherchez une solution prête à l'emploi en 24h",
-                  "Vous avez moins de 10 employés",
-                  "Vous n'avez aucun processus répétitif à automatiser",
-                ].map((item) => (
-                  <div key={item} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-gray-100 border border-gray-300 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-gray-500 text-xs font-bold">-</span>
-                    </div>
-                    <p className="text-gray-700 text-sm leading-relaxed">{item}</p>
-                  </div>
-                ))}
+              <div className="flex-1">
+                <MockupCarousel inline />
               </div>
             </div>
           </div>

@@ -7,7 +7,22 @@ module.exports = async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).end();
 
   try {
-    const { nom, email, telephone, entreprise, secteur, salaries, probleme, budget } = req.body || {};
+    const {
+      nom,
+      email,
+      telephone,
+      entreprise,
+      secteur,
+      salaries,
+      quizOutils,
+      quizAutomatisation,
+      quizProcess,
+      quizSuiviDonnees,
+      quizTempsRepetitif,
+      quizAisanceDigitale,
+      probleme,
+      budget
+    } = req.body || {};
 
     // Validations simples
     if (!nom || !email || !entreprise || !probleme) {
@@ -54,6 +69,12 @@ module.exports = async function handler(req, res) {
         `Entreprise: ${entreprise}\n` +
         `Secteur: ${secteur || "—"}\n` +
         `Salariés: ${salaries || "—"}\n` +
+        `Outils numériques utilisés: ${quizOutils || "—"}\n` +
+        `Priorité automatisation: ${quizAutomatisation || "—"}\n` +
+        `Processus documentés: ${quizProcess || "—"}\n` +
+        `Suivi des données: ${quizSuiviDonnees || "—"}\n` +
+        `Temps tâches répétitives: ${quizTempsRepetitif || "—"}\n` +
+        `Aisance digitale équipe: ${quizAisanceDigitale || "—"}\n` +
         `Budget: ${budget || "—"}\n\n` +
         `Problèmes:\n${probleme}`
     });
